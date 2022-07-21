@@ -5,10 +5,10 @@
 	keepBackpackOnDeath = false
 	#The amount of slot columns in the backpack inventory.
 	#Range: 1 ~ 13
-	backpackInventorySizeColumns = 9
+	backpackInventorySizeColumns = 7
 	#The amount of slot rows in the backpack inventory.
 	#Range: 1 ~ 7
-	backpackInventorySize = 1
+	backpackInventorySize = 2
 
 	[common.wandering_trader]
 		#If enabled, allows wandering traders to have a backpack equipped when they spawn.

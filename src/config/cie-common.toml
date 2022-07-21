@@ -11,7 +11,7 @@
 	#Should item entities be picked up automatically?
 	#Default = false
 	#Vanilla = true
-	"Automatic Pickup" = false
+	"Automatic Pickup" = true
 	#Should item entities only be picked up when sneaking?
 	#Default = false
 	#Vanilla = false
