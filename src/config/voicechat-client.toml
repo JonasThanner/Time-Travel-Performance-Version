@@ -1,6 +1,6 @@
 #Microphone activation type
 #Allowed Values: PTT, VOICE
-microphone_activation_type = "PTT"
+microphone_activation_type = "VOICE"
 #The threshold for voice activation in dB
 #Range: -127.0 ~ 0.0
 voice_activation_threshold = -50.0
@@ -69,7 +69,7 @@ hud_icon_scale = 1.0
 #Leave empty for default location
 recording_destination = ""
 #If noise cancellation should be enabled
-denoiser = false
+denoiser = true
 #If voice chat should work in singleplayer/LAN worlds
 run_local_server = true
 #Whether to use the Java implementation of microphone capturing instead of OpenAL
