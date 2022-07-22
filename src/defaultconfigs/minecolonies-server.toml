@@ -102,7 +102,7 @@
 	#Should players be allowed to use the /mc colony teleport command? [Default: false]
 	canplayerusecolonytpcommand = false
 	#Can players teleport to allied colonies? [Default: true]
-	canplayeruseallytownhallteleport = true
+	canplayeruseallytownhallteleport = false
 	#Should players be allowed to use the /mc home command? Note: Only owners of the colony can use this command. [Default: false]
 	canplayerusehometpcommand = false
 	#Should players be allowed to use the /mc colony info command? [Default: true]

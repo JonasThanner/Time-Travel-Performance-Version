@@ -30,18 +30,18 @@
 	#Range: > 1000
 	keep_alive = 1000
 	#If group chats are allowed
-	enable_groups = true
+	enable_groups = false
 	#If players in group chats can be heard locally
 	open_groups = false
 	#The host name that clients should use to connect to the voice chat
 	#Don't change this value if you don't know what you are doing
 	voice_host = ""
 	#If players are allowed to record the voice chat
-	allow_recording = true
+	allow_recording = false
 	#If spectators are allowed to talk to other players
 	spectator_interaction = false
 	#If spectators can talk to players they are spectating
-	spectator_player_possession = false
+	spectator_player_possession = true
 	#If players without the mod should get kicked from the server
 	force_voice_chat = false
 	#The amount of milliseconds, the server should wait to check if the player has the mod installed
