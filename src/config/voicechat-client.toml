@@ -83,4 +83,7 @@ offline_player_volume_adjustment = false
 #The 3D audio type
 #Allowed Values: NORMAL, REDUCED, OFF
 audio_type = "NORMAL"
+#If the mod should load native libraries
+#If set to false, the Java Opus implementation will be used and the denoiser won't be available
+use_natives = true
 
