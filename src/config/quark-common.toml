@@ -234,7 +234,7 @@
 	"Quick Armor Swapping" = true
 	"Item Sharing" = true
 	"Inventory Sorting" = true
-	"Hotbar Changer" = true
+	"Hotbar Changer" = false
 	"Expanded Item Interactions" = true
 	"Easy Transfering" = true
 	"Chests In Boats" = true
@@ -387,7 +387,7 @@
 	"Simple Harvest" = true
 	"Sign Editing" = true
 	"Replace Scaffolding" = true
-	"Reacharound Placing" = true
+	"Reacharound Placing" = false
 	"Poison Potato Usage" = true
 	"Pig Litters" = true
 	"Pat The Dogs" = true
@@ -1432,7 +1432,7 @@
 	"Uses For Curses" = true
 	"Usage Ticker" = true
 	"Soul Candles" = true
-	"Microcrafting Helper" = true
+	"Microcrafting Helper" = false
 	"Improved Tooltips" = true
 	"Greener Grass" = true
 	"Chest Searching" = true
