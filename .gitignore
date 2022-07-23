@@ -1,3 +1,5 @@
 src/config/voicechat/username-cache.json
 
+src/config/sound_physics_remastered/
+
 *.bak
