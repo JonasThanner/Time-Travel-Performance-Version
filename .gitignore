@@ -3,3 +3,9 @@ src/config/voicechat/username-cache.json
 src/config/sound_physics_remastered/
 
 *.bak
+
+# ignore journeymap saved date
+
+src/journeymap/*
+!src/journeymap/config/
+!src/journeymap/server
