@@ -20,7 +20,7 @@ args = argparser.parse_args()
 instance_path = os.path.abspath(os.path.expanduser(os.path.expandvars(args.dir)))
 src_path = os.path.abspath(os.path.expanduser(os.path.expandvars(os.path.dirname(__file__)))) + "/src/"
 
-for name in os.listdir(src_path):
+def link(name, src_path, instance_path):
     source = os.path.join(src_path, name)
     destination = os.path.join(instance_path, name)
 
@@ -36,3 +36,15 @@ for name in os.listdir(src_path):
             else:
                 os.remove(destination)
     os.symlink(source, destination)
+
+for name in os.listdir(src_path):
+    if name == "scripts":
+        scripts = os.path.join(src_path, name)
+        scripts_instance_path = os.path.join(instance_path, "scripts")
+        for script in os.listdir(scripts):
+            source = os.path.join(scripts, script)
+            destination = os.path.join(scripts_instance_path, script)
+            os.remove(destination)
+            os.link(source, destination)
+    else:
+        link(name, src_path, instance_path)
