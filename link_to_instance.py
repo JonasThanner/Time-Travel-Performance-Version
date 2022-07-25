@@ -26,7 +26,13 @@ for name in os.listdir(src_path):
 
     if os.path.exists(destination):
         if os.path.isdir(destination):
-            shutil.rmtree(destination)
+            if os.path.islink(destination):
+                os.unlink(destination)
+            else:
+                shutil.rmtree(destination)
         else:
-            os.remove(destination)
+            if os.path.islink(destination):
+                os.unlink(destination)
+            else:
+                os.remove(destination)
     os.symlink(source, destination)
