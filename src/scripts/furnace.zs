@@ -1,7 +1,6 @@
 import crafttweaker.api.recipe.FurnaceRecipeManager;
 import crafttweaker.api.recipe.BlastFurnaceRecipeManager;
 import crafttweaker.api.item.IItemStack;
-import crafttweaker.api.item.Ingredient;
 
 function deleteFurnaceSmelting(inputItem as IItemStack) as void{
     furnace.removeByInput(inputItem);
@@ -28,6 +27,7 @@ val itemToRemoveFromFurnance = [
     <item:minecraft:deepslate_gold_ore>,
     <item:minecraft:emerald_ore>,
     <item:minecraft:deepslate_emerald_ore>,
+    <item:minecraft:diamond_ore>,
     <item:minecraft:deepslate_diamond_ore>,
     <item:create:zinc_ore>,
     <item:create:deepslate_zinc_ore>,
@@ -50,7 +50,8 @@ val itemToRemoveFromFurnance = [
     <item:immersiveengineering:dust_iron>,
     <item:immersiveengineering:dust_gold>,
     <item:immersiveengineering:dust_steel>,
-    <item:immersiveengineering:dust_electrum>
+    <item:immersiveengineering:dust_electrum>,
+    <item:minecraft:ancient_debris>
 ] as IItemStack[];
 
 for item in itemToRemoveFromFurnance{
