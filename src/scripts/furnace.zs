@@ -1,59 +1,33 @@
 import crafttweaker.api.recipe.FurnaceRecipeManager;
 import crafttweaker.api.recipe.BlastFurnaceRecipeManager;
-import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.ingredient.IIngredient;
 
-function deleteFurnaceSmelting(inputItem as IItemStack) as void{
-    furnace.removeByInput(inputItem);
-    blastFurnace.removeByInput(inputItem);
+function deleteFurnaceSmelting(inputItem as IIngredient) as void{
+    furnace.remove(inputItem);
+    blastFurnace.remove(inputItem);
 }
 
-val itemToRemoveFromFurnance = [
-    <item:immersiveengineering:ore_uranium>,
-    <item:immersiveengineering:deepslate_ore_uranium>,
-    <item:immersiveengineering:ore_nickel>,
-    <item:immersiveengineering:deepslate_ore_nickel>,
-    <item:immersiveengineering:ore_lead>,
-    <item:immersiveengineering:deepslate_ore_lead>,
-    <item:immersiveengineering:ore_aluminum>,
-    <item:immersiveengineering:deepslate_ore_aluminum>,
-    <item:immersiveengineering:ore_silver>,
-    <item:immersiveengineering:deepslate_ore_silver>,
-    <item:minecraft:copper_ore>,
-    <item:minecraft:deepslate_copper_ore>,
-    <item:minecraft:iron_ore>,
-    <item:minecraft:deepslate_iron_ore>,
-    <item:minecraft:gold_ore>,
-    <item:minecraft:nether_gold_ore>,
-    <item:minecraft:deepslate_gold_ore>,
-    <item:minecraft:emerald_ore>,
-    <item:minecraft:deepslate_emerald_ore>,
-    <item:minecraft:diamond_ore>,
-    <item:minecraft:deepslate_diamond_ore>,
-    <item:create:zinc_ore>,
-    <item:create:deepslate_zinc_ore>,
-    <item:minecraft:raw_iron>,
-    <item:minecraft:raw_copper>,
-    <item:minecraft:raw_gold>,
-    <item:create:raw_zinc>,
-    <item:immersiveengineering:raw_lead>,
-    <item:immersiveengineering:raw_silver>,
-    <item:immersiveengineering:raw_nickel>,
-    <item:immersiveengineering:raw_uranium>,
-    <item:immersiveengineering:raw_aluminum>,
-    <item:immersiveengineering:dust_copper>,
-    <item:immersiveengineering:dust_aluminum>,
-    <item:immersiveengineering:dust_lead>,
-    <item:immersiveengineering:dust_silver>,
-    <item:immersiveengineering:dust_nickel>,
-    <item:immersiveengineering:dust_uranium>,
-    <item:immersiveengineering:dust_constantan>,
-    <item:immersiveengineering:dust_iron>,
-    <item:immersiveengineering:dust_gold>,
-    <item:immersiveengineering:dust_steel>,
-    <item:immersiveengineering:dust_electrum>,
-    <item:minecraft:ancient_debris>
-] as IItemStack[];
+val tagToRemoveFromFurnance = [
+    <tag:items:forge:ingots/gold>,
+    <tag:items:forge:ingots/copper>,
+    <tag:items:forge:ingots/iron>,
+    <tag:items:forge:ingots/aluminum>,
+    <tag:items:forge:ingots/cobalt>,
+    <tag:items:forge:ingots/nickel>,
+    <tag:items:forge:ingots/silver>,
+    <tag:items:forge:ingots/lead>,
+    <tag:items:forge:ingots/steel>,
+    <tag:items:forge:ingots/zinc>,
+    <tag:items:forge:ingots/uranium>,
+    <tag:items:forge:ingots/constantan>,
+    <tag:items:forge:ingots/electrum>
+] as IIngredient[];
 
-for item in itemToRemoveFromFurnance{
-    deleteFurnaceSmelting(item);
+for tag in tagToRemoveFromFurnance{
+    deleteFurnaceSmelting(tag);
 }
+
+blastFurnace.addRecipe("crushed_gold_to_ingot", <item:create:crushed_gold_ore>, <item:minecraft:gold_ingot>, 0.1, 5);
+blastFurnace.addRecipe("crushed_iron_to_ingot", <item:create:crushed_iron_ore>, <item:minecraft:iron_ingot>, 0.1, 5);
+blastFurnace.addRecipe("crushed_copper_to_ingot", <item:create:crushed_copper_ore>, <item:minecraft:copper_ingot>, 0.1, 5);
+blastFurnace.addRecipe("crushed_zinc_to_ingot", <item:create:crushed_zinc_ore>, <item:create:zinc_ingot>, 0.1, 5);
