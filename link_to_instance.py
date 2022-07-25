@@ -41,10 +41,12 @@ for name in os.listdir(src_path):
     if name == "scripts":
         scripts = os.path.join(src_path, name)
         scripts_instance_path = os.path.join(instance_path, "scripts")
+        for script in os.listdir(scripts_instance_path):
+            os.remove(os.path.join(scripts_instance_path, script))
+
         for script in os.listdir(scripts):
             source = os.path.join(scripts, script)
             destination = os.path.join(scripts_instance_path, script)
-            os.remove(destination)
             os.link(source, destination)
     else:
         link(name, src_path, instance_path)
