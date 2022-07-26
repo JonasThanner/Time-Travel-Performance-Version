@@ -1,0 +1,52 @@
+body {
+    font-size: 28px;
+    margin: 0;
+    background-color: #121212;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    position: absolute;
+    float: left;
+    margin: 0;
+    padding-left: 120px;
+}
+
+nav {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+li {
+    float: left;
+    margin: 25px 10px;
+    top: 100px;
+}
+
+li a {
+    display: block;
+    color: #272727;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Minecraft', sans-serif;
+    font-size: 1.4em;
+    text-shadow: 1px 0 white, 0 1px black, -1px 0 black, 0 -1px white;
+  }
+  
+  .active {
+    color: #907736;
+  }
+  
+  li a:hover {
+    /* color: #352808; */
+    text-shadow: 2px 0 white, 0 2px black, -2px 0 black, 0 -2px white;
+  }
+  
+
+  .nav_container {
+    position: relative;
+    width: 100%;
+  }
