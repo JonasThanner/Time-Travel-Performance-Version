@@ -16,6 +16,9 @@ var engine_3_cylinder = <item:car:engine_3_cylinder> as IIngredient;
 var engine_6_cylinder = <item:car:engine_6_cylinder> as IIngredient;
 var engine_truck = <item:car:engine_truck> as IIngredient;
 
+var carWheel = <item:car:wheel> as IIngredient;
+var bigCarWheel = <item:car:big_wheel> as IIngredient;
+
 var steel_ingot = <tag:items:forge:ingots/steel> as IIngredient;
 var steel_rods = <tag:items:forge:rods/steel> as IIngredient;
 var spark = <item:botania:spark> as IIngredient;
@@ -34,7 +37,9 @@ var itemRecipiesForRemoving = [
     engine_piston,
     engine_3_cylinder,
     engine_6_cylinder,
-    engine_truck
+    engine_truck,
+    carWheel,
+    bigCarWheel
 ] as IIngredient[];
 
 for item in itemRecipiesForRemoving{
@@ -207,3 +212,9 @@ for y in 0 .. 16 {
     createMechanicalCraftingRecipe("mechanical_crafting_suv_" + concreteCollor[y] + "_body", limeSuvBodiesToChange[y], [[air, concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y]], [air, glas, iron_rods, iron_rods, iron_rods], [concreteTypes[y], concreteTypes[y], iron_plade, iron_plade, iron_plade], [iron_light_bulb, concreteTypes[y], iron_plade, iron_plade, iron_plade]]);
     createMechanicalCraftingRecipe("mechanical_crafting_sportcar_" + concreteCollor[y] + "_body", limeSportBodiesToChange[y], [[air, glas, iron_rods, air, air], [concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y]], [iron_light_bulb, concreteTypes[y], iron_plade, iron_plade, iron_plade]]);
 }
+
+var aluminium = <tag:items:forge:ingots/aluminum> as IIngredient;
+var steel = <tag:items:forge:ingots/steel> as IIngredient;
+
+createCraftingRecipeShaped("car_wheel", carWheel, [[air, belt, air], [belt, aluminium, belt], [air, belt, air]]);
+createMechanicalCraftingRecipe("big_car_wheel", bigCarWheel, [[air, belt, air], [belt, steel, belt], [air, belt, air]]);

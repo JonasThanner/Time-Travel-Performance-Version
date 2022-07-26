@@ -18,5 +18,4 @@ function createMechanicalCraftingRecipe(name as string, output as IItemStack, re
 
 function createCraftingRecipeShaped(name as string, output as IItemStack, recipe as IIngredient[][]) as void{
     craftingTable.addShaped("crafting_table_shaped_"+ name, output, recipe, null);
-    createMechanicalCraftingRecipe(name, output, recipe);
 }
