@@ -207,3 +207,26 @@ for y in 0 .. 16 {
     createMechanicalCraftingRecipe("mechanical_crafting_suv_" + concreteCollor[y] + "_body", limeSuvBodiesToChange[y], [[air, concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y]], [air, glas, iron_rods, iron_rods, iron_rods], [concreteTypes[y], concreteTypes[y], iron_plade, iron_plade, iron_plade], [iron_light_bulb, concreteTypes[y], iron_plade, iron_plade, iron_plade]]);
     createMechanicalCraftingRecipe("mechanical_crafting_sportcar_" + concreteCollor[y] + "_body", limeSportBodiesToChange[y], [[air, glas, iron_rods, air, air], [concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y]], [iron_light_bulb, concreteTypes[y], iron_plade, iron_plade, iron_plade]]);
 }
+
+# remove fule production
+var removeFuleProductiomItems = [
+    <item:car:oilmill>,
+    <item:car:blastfurnace>,
+    <item:car:backmix_reactor>,
+    <item:car:generator>,
+    <item:car:split_tank>,
+    <item:car:cable>,
+    <item:car:fluid_extractor>,
+    <item:car:fluid_pipe>,
+    <item:car:dynamo>,
+    <item:car:crank>,
+    <item:car:canola_oil_bucket>,
+    <item:car:methanol_bucket>,
+    <item:car:canola_methanol_mix_bucket>,
+    <item:car:glycerin_bucket>,
+    <item:car:bio_diesel_bucket>
+] as IIngredient[];
+
+for item in removeFuleProductiomItems {
+    removeItem(item);
+}

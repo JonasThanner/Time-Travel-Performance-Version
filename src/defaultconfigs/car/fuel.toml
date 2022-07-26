@@ -2,3 +2,5 @@
 ["car:bio_diesel"]
 	efficiency = 100
 
+["immersiveengineering:biodiesel"]
+	efficiency = 100
