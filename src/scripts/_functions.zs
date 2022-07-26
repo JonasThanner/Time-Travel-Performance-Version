@@ -9,15 +9,10 @@ function deleteCraftingRecipeByItem(inputItem as IItemStack) as void{
 }
 
 function deleteCraftingRecipeByOutput(item as IIngredient) as void{
-    /* var ArrayRecipes = craftingTable.getRecipesByOutput(item);
-    for recipe in ArrayRecipes{
-        craftingTable.removeByName(recipes);
-    } */
     craftingTable.remove(item);
 }
 
 function createMechanicalCraftingRecipe(name as string, output as IItemStack, recipe as IIngredient[][]) as void{
-    // MechanicalCrafterManager.addRecipe(name as string, output as IItemStack, ingredients as IIngredient[][]) as void
     <recipetype:create:mechanical_crafting>.addRecipe("mechanical_crafting_" + name, output, recipe);
 }
 
