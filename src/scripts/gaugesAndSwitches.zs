@@ -47,6 +47,13 @@ var industrial_shock_sensitive_trapdoor = <item:rsgauges:industrial_shock_sensit
 var industrial_high_sensitive_trapdoor = <item:rsgauges:industrial_high_sensitive_trapdoor> as IIngredient;
 var industrial_fallthrough_detector = <item:rsgauges:industrial_fallthrough_detector> as IIngredient;
 
+var rustic_fallthrough_detector = <item:rsgauges:rustic_fallthrough_detector> as IIngredient;
+var rustic_high_sensitive_trapdoor = <item:rsgauges:rustic_high_sensitive_trapdoor> as IIngredient;
+var rustic_shock_sensitive_trapdoor = <item:rsgauges:rustic_shock_sensitive_trapdoor> as IIngredient;
+var rustic_shock_sensitive_plate = <item:rsgauges:rustic_shock_sensitive_plate> as IIngredient;
+var rustic_contact_plate = <item:rsgauges:rustic_contact_plate> as IIngredient;
+var rustic_door_contact_plate = <item:rsgauges:rustic_door_contact_plate> as IIngredient;
+
 var glass_linear_entity_detector = <item:rsgauges:glass_linear_entity_detector> as IIngredient;
 
 # items for creating new recipe
@@ -77,6 +84,9 @@ var chain = <item:minecraft:chain> as IIngredient;
 var iron_pressure_plate = <item:minecraft:heavy_weighted_pressure_plate> as IIngredient;
 var iron_trapdoor = <item:minecraft:iron_trapdoor> as IIngredient;
 var iron_rods = <tag:items:forge:rods/iron> as IIngredient;
+
+var gold_nugget = <tag:items:forge:nuggets/gold> as IIngredient;
+var sprucewood_planks = <item:minecraft:spruce_planks> as IIngredient;
 
 # recipe deleting array
 var recipeToDelete = [
@@ -231,4 +241,35 @@ createCraftingRecipeShaped("industrial_shock_sensitive_trapdoor", industrial_sho
 createCraftingRecipeShaped("industrial_high_sensitive_trapdoor", industrial_high_sensitive_trapdoor, [[redstone, iron_plate], [redstone, iron_trapdoor]]);
 createCraftingRecipeShaped("industrial_fallthrough_detector", industrial_fallthrough_detector, [[iron_rods, iron_rods], [redstone, glass_linear_entity_detector]]);
 
-# Missing: fancy Button and lever, contact mad, sensors, rustic pressure plate
+# changing rustic contact mat and trapdoors
+var recipeRusticContactMapAndTrapdoors = [
+    rustic_fallthrough_detector,
+    rustic_high_sensitive_trapdoor,
+    rustic_shock_sensitive_trapdoor,
+    rustic_shock_sensitive_plate,
+    rustic_contact_plate,
+    rustic_door_contact_plate
+] as IIngredient[];
+
+var nameRusticContactMapAndTrapdoors = [
+    "rustic_fallthrough_detector",
+    "rustic_high_sensitive_trapdoor",
+    "rustic_shock_sensitive_trapdoor",
+    "rustic_shock_sensitive_plate",
+    "rustic_contact_plate",
+    "rustic_door_contact_plate"
+] as string[];
+
+var changesRusticContactMapAndTrapdoors = [
+    industrial_fallthrough_detector,
+    industrial_high_sensitive_trapdoor,
+    industrial_shock_sensitive_trapdoor,
+    industrial_shock_sensitive_contact_mat,
+    industrial_contact_mat,
+    industrial_door_contact_mat
+] as IIngredient[];
+
+for i in 0 .. 6 {
+    deleteRecipeAndCreateShaped(nameRusticContactMapAndTrapdoors[i], recipeRusticContactMapAndTrapdoors[i], [[iron_plate, redstone], [air, changesRusticContactMapAndTrapdoors[i]]]);
+}
+# Missing: fancy Button and lever, sensors, glass button, glass systems
