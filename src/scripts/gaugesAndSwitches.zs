@@ -326,9 +326,9 @@ var nameGlassButtons = [
 ] as string[];
 
 var changeGlassButtons = [
+    glass_small_button,
     button,
-    glass_touch_button,
-    glass_small_button
+    glass
 ] as IIngredient[];
 
 for i in 0 .. 3 {
