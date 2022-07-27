@@ -2,11 +2,13 @@ import crafttweaker.api.recipe.FurnaceRecipeManager;
 import crafttweaker.api.recipe.BlastFurnaceRecipeManager;
 import crafttweaker.api.ingredient.IIngredient;
 
+# deleting function
 function deleteFurnaceSmelting(inputItem as IIngredient) as void{
     furnace.remove(inputItem);
     blastFurnace.remove(inputItem);
 }
 
+# array for items to remove
 val tagToRemoveFromFurnance = [
     <tag:items:forge:ingots/gold>,
     <tag:items:forge:ingots/copper>,
@@ -23,10 +25,12 @@ val tagToRemoveFromFurnance = [
     <tag:items:forge:ingots/electrum>
 ] as IIngredient[];
 
+# for loop for removing recipes
 for tag in tagToRemoveFromFurnance{
     deleteFurnaceSmelting(tag);
 }
 
+# creating new recipes
 blastFurnace.addRecipe("crushed_gold_to_ingot", <item:create:crushed_gold_ore>, <item:minecraft:gold_ingot>, 0.1, 5);
 blastFurnace.addRecipe("crushed_iron_to_ingot", <item:create:crushed_iron_ore>, <item:minecraft:iron_ingot>, 0.1, 5);
 blastFurnace.addRecipe("crushed_copper_to_ingot", <item:create:crushed_copper_ore>, <item:minecraft:copper_ingot>, 0.1, 5);

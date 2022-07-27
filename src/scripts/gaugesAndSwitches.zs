@@ -1,5 +1,6 @@
 import crafttweaker.api.ingredient.IIngredient;
 
+# items for recipes removing
 var industrial_estop = <item:rsgauges:industrial_estop_switch> as IIngredient;
 var industrial_small_lever = <item:rsgauges:industrial_small_lever> as IIngredient;
 var industrial_machine_switch = <item:rsgauges:industrial_machine_switch> as IIngredient;
@@ -20,6 +21,7 @@ var industrial_analog_angular_gauge = <item:rsgauges:industrial_analog_angular_g
 var industrial_vertical_bar_gauge = <item:rsgauges:industrial_vertical_bar_gauge> as IIngredient;
 var industrial_small_digital_gauge = <item:rsgauges:industrial_small_digital_gauge> as IIngredient;
 
+# items for creating new recipe
 var red_concrete = <item:minecraft:red_concrete> as IIngredient;
 var iron_nugget = <item:minecraft:iron_nugget> as IIngredient;
 var redstone = <item:minecraft:redstone> as IIngredient;
@@ -37,6 +39,7 @@ var redstone_acid_bucket = <item:immersiveengineering:redstone_acid_bucket> as I
 var comparator = <item:minecraft:comparator> as IIngredient;
 var industrial_comparator_switch = <item:rsgauges:industrial_comparator_switch> as IIngredient;
 
+# recipe deleting array
 var recipeToDelete = [
     industrial_estop,
     industrial_small_lever,
@@ -70,6 +73,7 @@ for items in recipeToDeleteByInput{
     deleteCraftingRecipeByItem(items);
 }
 
+# new recipes
 createCraftingRecipeShaped("industrial_estop", industrial_estop, [[iron_nugget, redstone], [redstone, red_concrete]]);
 createCraftingRecipeShaped("industrial_machine_switch", industrial_machine_switch, [[iron_plate, glowstone], [redstone, glowstone]]);
 createCraftingRecipeShaped("industrial_rotary_machine_switch", industrial_rotary_machine_switch, [[iron_plate, redstone], [redstone_torch, lever]]);
