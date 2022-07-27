@@ -54,6 +54,12 @@ var rustic_shock_sensitive_plate = <item:rsgauges:rustic_shock_sensitive_plate> 
 var rustic_contact_plate = <item:rsgauges:rustic_contact_plate> as IIngredient;
 var rustic_door_contact_plate = <item:rsgauges:rustic_door_contact_plate> as IIngredient;
 
+var fancy_bistable_switch_1 = <item:rsgauges:oldfancy_bistableswitch1> as IIngredient;
+var fancy_bistable_switch_2 = <item:rsgauges:oldfancy_bistableswitch2> as IIngredient;
+var fancy_button = <item:rsgauges:oldfancy_button> as IIngredient;
+var fancy_spring_reset_chain = <item:rsgauges:oldfancy_spring_reset_chain> as IIngredient;
+var fancy_small_button = <item:rsgauges:oldfancy_small_button> as IIngredient;
+
 var glass_linear_entity_detector = <item:rsgauges:glass_linear_entity_detector> as IIngredient;
 
 # items for creating new recipe
@@ -272,4 +278,34 @@ var changesRusticContactMapAndTrapdoors = [
 for i in 0 .. 6 {
     deleteRecipeAndCreateShaped(nameRusticContactMapAndTrapdoors[i], recipeRusticContactMapAndTrapdoors[i], [[iron_plate, redstone], [air, changesRusticContactMapAndTrapdoors[i]]]);
 }
-# Missing: fancy Button and lever, sensors, glass button, glass systems
+
+# changing fancy button and lever
+var recipeFancyButtonsAndLevers = [
+    fancy_bistable_switch_1,
+    fancy_bistable_switch_2,
+    fancy_button,
+    fancy_spring_reset_chain,
+    fancy_small_button
+] as IIngredient[];
+
+var nameFancyButtonsAndLevers = [
+    "fancy_bistable_switch_1",
+    "fancy_bistable_switch_2",
+    "fancy_button",
+    "fancy_spring_reset_chain",
+    "fancy_small_button"
+] as string[];
+
+var changeFancyButtonsAndLevers = [
+    industrial_lever,
+    industrial_rotary_lever,
+    rustic_button,
+    rustic_spring_chain,
+    rustic_small_button
+] as IIngredient[];
+
+for i in 0 .. 5 {
+    deleteRecipeAndCreateShaped(nameFancyButtonsAndLevers[i], recipeFancyButtonsAndLevers[i], [[gold_nugget, gold_nugget], [sprucewood_planks, changeFancyButtonsAndLevers[i]]]);
+}
+
+# Missing: sensors, glass button, glass systems
