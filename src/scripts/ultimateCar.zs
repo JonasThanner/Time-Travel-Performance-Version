@@ -10,6 +10,7 @@ import crafttweaker.api.tag.TagManager;
 
 <tag:fluids:car:gas_station>.add(<fluid:immersiveengineering:biodiesel>);
 
+# items for deleting recipe
 var asphalt = <item:car:asphalt> as IIngredient;
 var engine_piston = <item:car:engine_piston> as IIngredient;
 var engine_3_cylinder = <item:car:engine_3_cylinder> as IIngredient;
@@ -19,6 +20,7 @@ var engine_truck = <item:car:engine_truck> as IIngredient;
 var carWheel = <item:car:wheel> as IIngredient;
 var bigCarWheel = <item:car:big_wheel> as IIngredient;
 
+# items for building new recipes
 var steel_ingot = <tag:items:forge:ingots/steel> as IIngredient;
 var steel_rods = <tag:items:forge:rods/steel> as IIngredient;
 var spark = <item:botania:spark> as IIngredient;
@@ -46,6 +48,7 @@ for item in itemRecipiesForRemoving{
     deleteCraftingRecipeByOutput(item);
 }
 
+# new recipe 
 <recipetype:create:mixing>.addRecipe("asphalt", <constant:create:heat_condition:superheated>, [<item:car:asphalt> * 2,(<item:car:asphalt>) % 50], [<tag:items:forge:slag>, <tag:items:forge:gravel>, <tag:items:forge:sand>], null, 200);
 
 createMechanicalCraftingRecipe("mechanical_crafting_engine_piston", engine_piston, [[air, air, steel_ingot], [air, steel_rods, air], [steel_rods, air, air]]);
@@ -58,6 +61,7 @@ var iron_plade = <tag:items:forge:plates/iron> as IIngredient;
 var iron_light_bulb = <item:engineersdecor:iron_bulb_light> as IIngredient;
 var glas = <tag:items:forge:glass> as IIngredient;
 
+# array for deleting and changing recipes
 var bodiesToChange = [
     <item:car:oak_body>,
     <item:car:warped_body>,
@@ -102,6 +106,7 @@ var nameOfBody = [
     "spruce"
 ] as string[];
 
+# deleting and creating recipes in for loop
 for i in 0 .. 8 {
     deleteCraftingRecipeByOutput(bodiesToChange[i]);
     deleteCraftingRecipeByOutput(bigBodiesToChange[i]);
@@ -109,6 +114,7 @@ for i in 0 .. 8 {
     createMechanicalCraftingRecipe("mechanical_crafting_big_bodies_" + nameOfBody[i] + "body", bigBodiesToChange[i], [[air, air, typesOfWood[i], typesOfWood[i], typesOfWood[i]], [air, air, glas, iron_rods, iron_rods], [typesOfWood[i], typesOfWood[i], iron_rods, iron_plade, iron_plade], [iron_light_bulb, typesOfWood[i], iron_plade, iron_plade, iron_plade]]);
 }
 
+# array for deleting and changing
 var limeBodiesToChange = [
     <item:car:cyan_transporter_body>,
     <item:car:gray_transporter_body>,
@@ -204,6 +210,7 @@ var concreteCollor = [
     "red"
 ] as string[];
 
+# for loop for deleting and creating new recipes
 for y in 0 .. 16 {
     deleteCraftingRecipeByOutput(limeBodiesToChange[y]);
     deleteCraftingRecipeByOutput(limeSuvBodiesToChange[y]);
@@ -213,6 +220,7 @@ for y in 0 .. 16 {
     createMechanicalCraftingRecipe("mechanical_crafting_sportcar_" + concreteCollor[y] + "_body", limeSportBodiesToChange[y], [[air, glas, iron_rods, air, air], [concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y]], [iron_light_bulb, concreteTypes[y], iron_plade, iron_plade, iron_plade]]);
 }
 
+# new wheel recipes
 var aluminium = <tag:items:forge:ingots/aluminum> as IIngredient;
 var steel = <tag:items:forge:ingots/steel> as IIngredient;
 
