@@ -1,0 +1,10 @@
+{
+	"x": 5,
+	"y": -44,
+	"width": 98,
+	"height": 20,
+	"langKey": "menu.singleplayer",
+	"action": "OPEN_GUI",
+	"anchor": "MIDDLE_LEFT",
+	"data": "SINGLEPLAYER"
+}
