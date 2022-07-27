@@ -64,6 +64,9 @@ var glass_button = <item:rsgauges:glass_button> as IIngredient;
 var glass_small_button = <item:rsgauges:glass_small_button> as IIngredient;
 var glass_touch_button = <item:rsgauges:glass_touch_button> as IIngredient;
 
+var glass_rotary_switch = <item:rsgauges:glass_rotary_switch> as IIngredient;
+var glass_touch_switch = <item:rsgauges:glass_touch_switch> as IIngredient;
+
 var glass_linear_entity_detector = <item:rsgauges:glass_linear_entity_detector> as IIngredient;
 
 # items for creating new recipe
@@ -131,7 +134,8 @@ var recipeToDelete = [
 
 var recipeToDeleteByInput = [
     industrial_pull_handle,
-    industrial_analog_horizontal_gauge
+    industrial_analog_horizontal_gauge,
+    glass_touch_switch
 ] as IIngredient[];
 
 for item in recipeToDelete{
@@ -335,5 +339,7 @@ for i in 0 .. 3 {
     deleteRecipeAndCreateShaped(nameGlassButtons[i], recipeGlassButtons[i], [[iron_nugget, redstone], [glass, changeGlassButtons[i]]]);
 }
 
+# changing glass switch
+deleteRecipeAndCreateShaped("glass_touch_switch", glass_touch_switch, [[glass, redstone], [glass_touch_switch, glass]]);
 
 # Missing: sensors, glass systems, glass contact plate, bistable glass switch
