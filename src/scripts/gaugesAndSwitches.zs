@@ -40,6 +40,15 @@ var rustic_small_button = <item:rsgauges:rustic_small_button> as IIngredient;
 var rustic_button = <item:rsgauges:rustic_button> as IIngredient;
 var rustic_nail_lever = <item:rsgauges:rustic_nail_lever> as IIngredient;
 
+var industrial_door_contact_mat = <item:rsgauges:industrial_door_contact_mat> as IIngredient;
+var industrial_contact_mat = <item:rsgauges:industrial_contact_mat> as IIngredient;
+var industrial_shock_sensitive_contact_mat = <item:rsgauges:industrial_shock_sensitive_contact_mat> as IIngredient;
+var industrial_shock_sensitive_trapdoor = <item:rsgauges:industrial_shock_sensitive_trapdoor> as IIngredient;
+var industrial_high_sensitive_trapdoor = <item:rsgauges:industrial_high_sensitive_trapdoor> as IIngredient;
+var industrial_fallthrough_detector = <item:rsgauges:industrial_fallthrough_detector> as IIngredient;
+
+var glass_linear_entity_detector = <item:rsgauges:glass_linear_entity_detector> as IIngredient;
+
 # items for creating new recipe
 var air = <item:minecraft:air> as IIngredient;
 
@@ -65,6 +74,10 @@ var redstone_randomizer = <item:quark:redstone_randomizer> as IIngredient;
 
 var chain = <item:minecraft:chain> as IIngredient;
 
+var iron_pressure_plate = <item:minecraft:heavy_weighted_pressure_plate> as IIngredient;
+var iron_trapdoor = <item:minecraft:iron_trapdoor> as IIngredient;
+var iron_rods = <tag:items:forge:rods/iron> as IIngredient;
+
 # recipe deleting array
 var recipeToDelete = [
     industrial_estop,
@@ -86,7 +99,14 @@ var recipeToDelete = [
     industrial_small_digital_gauge,
 
     rustic_nail_button,
-    rustic_nail_lever
+    rustic_nail_lever,
+
+    industrial_door_contact_mat,
+    industrial_contact_mat,
+    industrial_shock_sensitive_contact_mat,
+    industrial_shock_sensitive_trapdoor,
+    industrial_high_sensitive_trapdoor,
+    industrial_fallthrough_detector
 ] as IIngredient[];
 
 var recipeToDeleteByInput = [
@@ -203,4 +223,12 @@ for i in 0 .. 6 {
     deleteRecipeAndCreateShaped(nameRusticLever[i], recipeRusticLever[i], [[iron_plate, redstone], [air, changesInRecipe[i]]]);
 }
 
-# Missing: trapdoor types, fancy Button and lever
+# changing contact mat and trapdoors
+createCraftingRecipeShaped("industrial_door_contact_mat", industrial_door_contact_mat, [[glowstone, iron_plate], [redstone, iron_pressure_plate]]);
+createCraftingRecipeShaped("industrial_contact_mat", industrial_contact_mat, [[glowstone, iron_nugget], [redstone, iron_pressure_plate]]);
+createCraftingRecipeShaped("industrial_shock_sensitive_contact_mat", industrial_shock_sensitive_contact_mat, [[redstone, iron_plate], [redstone, iron_pressure_plate]]);
+createCraftingRecipeShaped("industrial_shock_sensitive_trapdoor", industrial_shock_sensitive_trapdoor, [[air, iron_plate], [redstone, iron_trapdoor]]);
+createCraftingRecipeShaped("industrial_high_sensitive_trapdoor", industrial_high_sensitive_trapdoor, [[redstone, iron_plate], [redstone, iron_trapdoor]]);
+createCraftingRecipeShaped("industrial_fallthrough_detector", industrial_fallthrough_detector, [[iron_rods, iron_rods], [redstone, glass_linear_entity_detector]]);
+
+# Missing: fancy Button and lever, contact mad, sensors, rustic pressure plate
