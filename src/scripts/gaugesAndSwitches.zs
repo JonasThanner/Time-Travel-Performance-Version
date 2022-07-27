@@ -67,6 +67,9 @@ var glass_touch_button = <item:rsgauges:glass_touch_button> as IIngredient;
 var glass_rotary_switch = <item:rsgauges:glass_rotary_switch> as IIngredient;
 var glass_touch_switch = <item:rsgauges:glass_touch_switch> as IIngredient;
 
+var glass_door_contact_mat = <item:rsgauges:glass_door_contact_mat> as IIngredient;
+var glass_contact_mat = <item:rsgauges:glass_contact_mat> as IIngredient;
+
 var glass_linear_entity_detector = <item:rsgauges:glass_linear_entity_detector> as IIngredient;
 
 # items for creating new recipe
@@ -342,4 +345,24 @@ for i in 0 .. 3 {
 # changing glass switch
 deleteRecipeAndCreateShaped("glass_touch_switch", glass_touch_switch, [[glass, redstone], [glass_touch_switch, glass]]);
 
-# Missing: sensors, glass systems, glass contact plate, bistable glass switch
+# change glass mat
+var recipeGlassMat = [
+    glass_door_contact_mat,
+    glass_contact_mat
+] as IIngredient[];
+
+var nameGlassMat = [
+    "glass_door_contact_mat",
+    "glass_contact_mat"
+] as string[];
+
+var changeGlassMat = [
+    industrial_door_contact_mat,
+    industrial_contact_mat
+] as IIngredient[];
+
+for i in 0 .. 2 {
+    deleteRecipeAndCreateShaped(nameGlassMat[i], recipeGlassMat[i], [[redstone, iron_nugget], [glass, changeGlassMat[i]]]);
+}
+
+# Missing: sensors, glass systems, glass contact plate
