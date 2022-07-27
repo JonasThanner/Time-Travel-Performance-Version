@@ -21,6 +21,16 @@ var industrial_analog_angular_gauge = <item:rsgauges:industrial_analog_angular_g
 var industrial_vertical_bar_gauge = <item:rsgauges:industrial_vertical_bar_gauge> as IIngredient;
 var industrial_small_digital_gauge = <item:rsgauges:industrial_small_digital_gauge> as IIngredient;
 
+var industrial_green_led = <item:rsgauges:industrial_green_led> as IIngredient;
+var industrial_white_led = <item:rsgauges:industrial_white_led> as IIngredient;
+var industrial_yellow_led = <item:rsgauges:industrial_yellow_led> as IIngredient;
+var industrial_red_led = <item:rsgauges:industrial_red_led> as IIngredient;
+
+var industrial_green_blinking_led = <item:rsgauges:industrial_green_blinking_led> as IIngredient;
+var industrial_red_blinking_led = <item:rsgauges:industrial_red_blinking_led> as IIngredient;
+var industrial_white_blinking_led = <item:rsgauges:industrial_white_blinking_led> as IIngredient;
+var industrial_yellow_blinking_led = <item:rsgauges:industrial_yellow_blinking_led> as IIngredient;
+
 # items for creating new recipe
 var red_concrete = <item:minecraft:red_concrete> as IIngredient;
 var iron_nugget = <item:minecraft:iron_nugget> as IIngredient;
@@ -32,12 +42,15 @@ var redstone_torch = <item:minecraft:redstone_torch> as IIngredient;
 var button = <tag:items:minecraft:buttons> as IIngredient;
 
 var green_dye = <tag:items:forge:dyes/green> as IIngredient;
-var red_dye = <item:minecraft:red_dye> as IIngredient;
+var red_dye = <tag:items:forge:dyes/red> as IIngredient;
+var yellow_dye = <tag:items:forge:dyes/yellow> as IIngredient;
+var white_dye = <tag:items:forge:dyes/white> as IIngredient;
 
 var glas = <tag:items:forge:glass_panes/colorless> as IIngredient;
 var redstone_acid_bucket = <item:immersiveengineering:redstone_acid_bucket> as IIngredient;
 var comparator = <item:minecraft:comparator> as IIngredient;
 var industrial_comparator_switch = <item:rsgauges:industrial_comparator_switch> as IIngredient;
+var redstone_randomizer = <item:quark:redstone_randomizer> as IIngredient;
 
 # recipe deleting array
 var recipeToDelete = [
@@ -92,4 +105,51 @@ createCraftingRecipeShaped("industrial_analog_horizontal_gauge", industrial_anal
 createCraftingRecipeShaped("industrial_vertical_bar_gauge", industrial_vertical_bar_gauge, [[comparator, glas], [redstone, glas]]);
 createCraftingRecipeShaped("industrial_small_digital_gauge", industrial_small_digital_gauge, [[redstone, iron_nugget], [industrial_comparator_switch, glas]]);
 
-# Missing: LED redstone endicators, lever types, trapdoor types, fancy Button and lever
+# recipe to change
+var recipeLed = [
+    industrial_green_led,
+    industrial_white_led,
+    industrial_yellow_led,
+    industrial_red_led
+] as IIngredient[];
+
+# colors types of led
+var colorType = [
+    green_dye,
+    white_dye,
+    yellow_dye,
+    red_dye
+] as IIngredient[];
+
+# name of led as string
+var nameLed = [
+    "industrial_green_led",
+    "industrial_white_led",
+    "industrial_yellow_led",
+    "industrial_red_led"
+] as string[];
+
+var recipeBlinkingLed = [
+    industrial_green_blinking_led,
+    industrial_white_blinking_led,
+    industrial_yellow_blinking_led, 
+    industrial_red_blinking_led
+] as IIngredient[];
+
+var nameBlinkingLed = [
+    "industrial_green_blinking_led",
+    "industrial_white_blinking_led",
+    "industrial_yellow_blinking_led",
+    "industrial_red_blinking_led"
+] as string[];
+
+# for loop to create and delete items
+for i in 0 .. 4 {
+    deleteRecipeAndCreateShaped(nameLed[i], recipeLed[i], [[iron_plate, colorType[i]], [redstone, glowstone]]);
+}
+
+for i in 0 .. 4 {
+    deleteRecipeAndCreateShaped(nameBlinkingLed[i], recipeBlinkingLed[i], [[redstone_randomizer, colorType[i]], [glowstone, iron_plate]]);
+}
+
+# Missing: lever types, trapdoor types, fancy Button and lever
