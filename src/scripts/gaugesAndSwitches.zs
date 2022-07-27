@@ -31,7 +31,18 @@ var industrial_red_blinking_led = <item:rsgauges:industrial_red_blinking_led> as
 var industrial_white_blinking_led = <item:rsgauges:industrial_white_blinking_led> as IIngredient;
 var industrial_yellow_blinking_led = <item:rsgauges:industrial_yellow_blinking_led> as IIngredient;
 
+var rustic_two_hinge_lever = <item:rsgauges:rustic_two_hinge_lever> as IIngredient;
+var rustic_angular_lever = <item:rsgauges:rustic_angular_lever> as IIngredient;
+var rustic_lever = <item:rsgauges:rustic_lever> as IIngredient;
+var rustic_nail_button = <item:rsgauges:rustic_nail_button> as IIngredient;
+var rustic_spring_chain = <item:rsgauges:rustic_spring_reset_chain> as IIngredient;
+var rustic_small_button = <item:rsgauges:rustic_small_button> as IIngredient;
+var rustic_button = <item:rsgauges:rustic_button> as IIngredient;
+var rustic_nail_lever = <item:rsgauges:rustic_nail_lever> as IIngredient;
+
 # items for creating new recipe
+var air = <item:minecraft:air> as IIngredient;
+
 var red_concrete = <item:minecraft:red_concrete> as IIngredient;
 var iron_nugget = <item:minecraft:iron_nugget> as IIngredient;
 var redstone = <item:minecraft:redstone> as IIngredient;
@@ -52,6 +63,8 @@ var comparator = <item:minecraft:comparator> as IIngredient;
 var industrial_comparator_switch = <item:rsgauges:industrial_comparator_switch> as IIngredient;
 var redstone_randomizer = <item:quark:redstone_randomizer> as IIngredient;
 
+var chain = <item:minecraft:chain> as IIngredient;
+
 # recipe deleting array
 var recipeToDelete = [
     industrial_estop,
@@ -70,7 +83,10 @@ var recipeToDelete = [
     industrial_tube_gauge,
     industrial_analog_horizontal_gauge,
     industrial_vertical_bar_gauge,
-    industrial_small_digital_gauge
+    industrial_small_digital_gauge,
+
+    rustic_nail_button,
+    rustic_nail_lever
 ] as IIngredient[];
 
 var recipeToDeleteByInput = [
@@ -152,4 +168,39 @@ for i in 0 .. 4 {
     deleteRecipeAndCreateShaped(nameBlinkingLed[i], recipeBlinkingLed[i], [[redstone_randomizer, colorType[i]], [glowstone, iron_plate]]);
 }
 
-# Missing: lever types, trapdoor types, fancy Button and lever
+# create recipe for nail button and nail lever
+createCraftingRecipeShaped("rustic_nail_button", rustic_nail_button, [[iron_nugget, redstone], [air, button]]);
+createCraftingRecipeShaped("rustic_nail_lever", rustic_nail_lever, [[iron_plate, redstone], [lever, rustic_nail_button]]);
+
+var recipeRusticLever = [
+    rustic_two_hinge_lever, 
+    rustic_angular_lever,
+    rustic_lever,
+    rustic_spring_chain,
+    rustic_small_button,
+    rustic_button
+] as IIngredient[];
+
+var nameRusticLever = [
+    "rustic_two_hinge_lever",
+    "rustic_angular_lever",
+    "rustic_lever",
+    "rustic_spring_chain",
+    "rustic_small_button",
+    "rustic_button"
+] as string[];
+
+var changesInRecipe = [
+    industrial_small_lever,
+    industrial_rotary_lever,
+    industrial_lever,
+    chain,
+    button,
+    rustic_small_button
+] as IIngredient[];
+
+for i in 0 .. 6 {
+    deleteRecipeAndCreateShaped(nameRusticLever[i], recipeRusticLever[i], [[iron_plate, redstone], [air, changesInRecipe[i]]]);
+}
+
+# Missing: trapdoor types, fancy Button and lever
