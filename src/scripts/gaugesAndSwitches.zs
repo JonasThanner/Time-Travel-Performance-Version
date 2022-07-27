@@ -70,7 +70,18 @@ var glass_touch_switch = <item:rsgauges:glass_touch_switch> as IIngredient;
 var glass_door_contact_mat = <item:rsgauges:glass_door_contact_mat> as IIngredient;
 var glass_contact_mat = <item:rsgauges:glass_contact_mat> as IIngredient;
 
+var industrial_interval_timer = <item:rsgauges:industrial_interval_timer> as IIngredient;
+var industrial_linear_entity_detector = <item:rsgauges:industrial_linear_entity_detector> as IIngredient;
+var industrial_lightning_sensor = <item:rsgauges:industrial_lightning_sensor> as IIngredient;
+var industrial_rain_sensor = <item:rsgauges:industrial_rain_sensor> as IIngredient;
+var industrial_day_timer = <item:rsgauges:industrial_day_timer> as IIngredient;
+var industrial_entity_detector = <item:rsgauges:industrial_entity_detector> as IIngredient;
+var industrial_light_sensor = <item:rsgauges:industrial_light_sensor> as IIngredient;
+
 var glass_linear_entity_detector = <item:rsgauges:glass_linear_entity_detector> as IIngredient;
+var glass_interval_timer = <item:rsgauges:glass_interval_timer> as IIngredient;
+var glass_day_timer = <item:rsgauges:glass_day_timer> as IIngredient;
+var glass_entity_detector = <item:rsgauges:glass_entity_detector> as IIngredient;
 
 # items for creating new recipe
 var air = <item:minecraft:air> as IIngredient;
@@ -90,6 +101,7 @@ var yellow_dye = <tag:items:forge:dyes/yellow> as IIngredient;
 var white_dye = <tag:items:forge:dyes/white> as IIngredient;
 
 var glass = <tag:items:forge:glass_panes/colorless> as IIngredient;
+var glass_block = <tag:items:forge:glass/colorless> as IIngredient;
 var redstone_acid_bucket = <item:immersiveengineering:redstone_acid_bucket> as IIngredient;
 var comparator = <item:minecraft:comparator> as IIngredient;
 var industrial_comparator_switch = <item:rsgauges:industrial_comparator_switch> as IIngredient;
@@ -103,6 +115,9 @@ var iron_rods = <tag:items:forge:rods/iron> as IIngredient;
 
 var gold_nugget = <tag:items:forge:nuggets/gold> as IIngredient;
 var sprucewood_planks = <item:minecraft:spruce_planks> as IIngredient;
+
+var lightning_rod = <item:minecraft:lightning_rod> as IIngredient;
+var hopper = <item:minecraft:hopper> as IIngredient;
 
 # recipe deleting array
 var recipeToDelete = [
@@ -138,7 +153,21 @@ var recipeToDelete = [
 var recipeToDeleteByInput = [
     industrial_pull_handle,
     industrial_analog_horizontal_gauge,
-    glass_touch_switch
+
+    glass_touch_switch,
+
+    industrial_interval_timer,
+    industrial_linear_entity_detector,
+    industrial_lightning_sensor,
+    industrial_day_timer,
+    industrial_entity_detector,
+    industrial_rain_sensor,
+    industrial_light_sensor,
+
+    glass_interval_timer,
+    glass_day_timer,
+    glass_linear_entity_detector,
+    glass_entity_detector
 ] as IIngredient[];
 
 for item in recipeToDelete{
@@ -365,4 +394,34 @@ for i in 0 .. 2 {
     deleteRecipeAndCreateShaped(nameGlassMat[i], recipeGlassMat[i], [[redstone, iron_nugget], [glass, changeGlassMat[i]]]);
 }
 
-# Missing: sensors, glass systems, glass contact plate
+# change sensors and timer
+deleteRecipeAndCreateShaped("industrial_interval_timer", industrial_interval_timer, [[iron_plate, redstone], [comparator, redstone_randomizer]]);
+deleteRecipeAndCreateShaped("industrial_linear_entity_detector", industrial_linear_entity_detector, [[iron_plate, iron_plate], [comparator, comparator]]);
+deleteRecipeAndCreateShaped("industrial_lightning_sensor", industrial_lightning_sensor, [[iron_rods, lightning_rod], [iron_plate, redstone]]);
+deleteRecipeAndCreateShaped("industrial_rain_sensor", industrial_rain_sensor, [[hopper,iron_plate], [iron_rods, redstone]]);
+
+# change glass sensors
+var recipeGlassSensor = [
+    glass_interval_timer,
+    glass_linear_entity_detector,
+    glass_day_timer,
+    glass_entity_detector
+] as IIngredient[];
+
+var nameGlassSensor = [
+    "glass_interval_timer",
+    "glass_linear_entity_detector",
+    "glass_day_timer",
+    "glass_entity_detector"
+] as string[];
+
+var changeGlassSensor = [
+    industrial_interval_timer,
+    industrial_linear_entity_detector,
+    industrial_day_timer,
+    industrial_entity_detector
+] as IIngredient[];
+
+for i in 0 .. 4 {
+    deleteRecipeAndCreateShaped(nameGlassSensor[i], recipeGlassSensor[i], [[iron_nugget, iron_nugget], [glass_block, changeGlassSensor[i]]]);
+}
