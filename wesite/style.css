@@ -1,52 +1,76 @@
 body {
-    font-size: 28px;
-    margin: 0;
-    background-color: #121212;
-    color: white;
+  font-size: 28px;
+  margin: 0;
+  background-color: #121212;
+  color: white;
+  min-width: 800px;
 }
 
+/* navigation bar */
 ul {
-    list-style-type: none;
-    overflow: hidden;
-    position: absolute;
-    float: left;
-    margin: 0;
-    padding-left: 120px;
+  list-style-type: none;
+  overflow: hidden;
+  position: absolute;
+  float: left;
+  margin: 0;
+  padding-left: calc(100% / 18);
 }
 
 nav {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+  /* default */
+  position: sticky;
+  /* Safari */
+  position: -webkit-sticky;
+  top: 0;
 }
 
 li {
-    float: left;
-    margin: 25px 10px;
-    top: 100px;
+  float: left;
+  margin: 25px 15px;
+  top: 100px;
 }
 
 li a {
-    display: block;
-    color: #272727;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Minecraft', sans-serif;
-    font-size: 1.4em;
-    text-shadow: 1px 0 white, 0 1px black, -1px 0 black, 0 -1px white;
-  }
-  
-  .active {
-    color: #907736;
-  }
-  
-  li a:hover {
-    /* color: #352808; */
-    text-shadow: 2px 0 white, 0 2px black, -2px 0 black, 0 -2px white;
-  }
-  
+  display: block;
+  color: #272727;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Minecraft', sans-serif;
+  font-size: 1.4em;
+  text-shadow: 1px 0 white, 0 1px black, -1px 0 black, 0 -1px white;
+}
 
-  .nav_container {
-    position: relative;
-    width: 100%;
-  }
+.active {
+  color: #b89338;
+}
+
+li a:hover {
+  /* color: #352808; */
+  text-shadow: 2px 0 white, 0 2px black, -2px 0 black, 0 -2px white;
+}
+
+.nav_container {
+  position: relative;
+  width: 100%;
+}
+
+/* main section */
+main {
+  padding: 10px 7%;
+}
+
+section h1 {
+  text-align: center;
+  font-family: 'Minecraft', sans-serif;
+  font-size: 2.5em;
+  color: #b89338;
+  text-shadow: 2px 0 white, 0 2px black, -2px 0 black, 0 -2px white;
+}
+
+section p {
+  text-align: justify;
+  border: 55px solid blue;
+	border-image-source: url(border.png);
+	border-image-slice: 33%;
+  background: url(text_background.png);
+}
