@@ -60,6 +60,10 @@ var fancy_button = <item:rsgauges:oldfancy_button> as IIngredient;
 var fancy_spring_reset_chain = <item:rsgauges:oldfancy_spring_reset_chain> as IIngredient;
 var fancy_small_button = <item:rsgauges:oldfancy_small_button> as IIngredient;
 
+var glass_button = <item:rsgauges:glass_button> as IIngredient;
+var glass_small_button = <item:rsgauges:glass_small_button> as IIngredient;
+var glass_touch_button = <item:rsgauges:glass_touch_button> as IIngredient;
+
 var glass_linear_entity_detector = <item:rsgauges:glass_linear_entity_detector> as IIngredient;
 
 # items for creating new recipe
@@ -79,7 +83,7 @@ var red_dye = <tag:items:forge:dyes/red> as IIngredient;
 var yellow_dye = <tag:items:forge:dyes/yellow> as IIngredient;
 var white_dye = <tag:items:forge:dyes/white> as IIngredient;
 
-var glas = <tag:items:forge:glass_panes/colorless> as IIngredient;
+var glass = <tag:items:forge:glass_panes/colorless> as IIngredient;
 var redstone_acid_bucket = <item:immersiveengineering:redstone_acid_bucket> as IIngredient;
 var comparator = <item:minecraft:comparator> as IIngredient;
 var industrial_comparator_switch = <item:rsgauges:industrial_comparator_switch> as IIngredient;
@@ -152,10 +156,10 @@ createCraftingRecipeShaped("industrial_pull_handle", industrial_pull_handle, [[b
 createCraftingRecipeShaped("industrial_foot_button", industrial_foot_button, [[redstone, button], [iron_plate, lever]]);
 createCraftingRecipeShaped("industrial_double_pole_button", industrial_double_pole_button, [[redstone, button], [iron_plate, redstone]]);
 
-createCraftingRecipeShaped("industrial_tube_gauge", industrial_tube_gauge, [[iron_plate, glas], [redstone_acid_bucket, glas]]);
+createCraftingRecipeShaped("industrial_tube_gauge", industrial_tube_gauge, [[iron_plate, glass], [redstone_acid_bucket, glass]]);
 createCraftingRecipeShaped("industrial_analog_horizontal_gauge", industrial_analog_horizontal_gauge, [[redstone, comparator]]);
-createCraftingRecipeShaped("industrial_vertical_bar_gauge", industrial_vertical_bar_gauge, [[comparator, glas], [redstone, glas]]);
-createCraftingRecipeShaped("industrial_small_digital_gauge", industrial_small_digital_gauge, [[redstone, iron_nugget], [industrial_comparator_switch, glas]]);
+createCraftingRecipeShaped("industrial_vertical_bar_gauge", industrial_vertical_bar_gauge, [[comparator, glass], [redstone, glass]]);
+createCraftingRecipeShaped("industrial_small_digital_gauge", industrial_small_digital_gauge, [[redstone, iron_nugget], [industrial_comparator_switch, glass]]);
 
 # recipe to change
 var recipeLed = [
@@ -308,4 +312,28 @@ for i in 0 .. 5 {
     deleteRecipeAndCreateShaped(nameFancyButtonsAndLevers[i], recipeFancyButtonsAndLevers[i], [[gold_nugget, gold_nugget], [sprucewood_planks, changeFancyButtonsAndLevers[i]]]);
 }
 
-# Missing: sensors, glass button, glass systems
+# changing glass buttons
+var recipeGlassButtons = [
+    glass_button,
+    glass_small_button,
+    glass_touch_button
+] as IIngredient[];
+
+var nameGlassButtons = [
+    "glass_button",
+    "glass_small_button",
+    "glass_touch_button"
+] as string[];
+
+var changeGlassButtons = [
+    button,
+    glass_touch_button,
+    glass_small_button
+] as IIngredient[];
+
+for i in 0 .. 3 {
+    deleteRecipeAndCreateShaped(nameGlassButtons[i], recipeGlassButtons[i], [[iron_nugget, redstone], [glass, changeGlassButtons[i]]]);
+}
+
+
+# Missing: sensors, glass systems, glass contact plate, bistable glass switch
