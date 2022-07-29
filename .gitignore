@@ -9,3 +9,6 @@ src/config/sound_physics_remastered/
 src/journeymap/*
 !src/journeymap/config/
 !src/journeymap/server
+
+# website
+website/venv/
