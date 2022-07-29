@@ -83,6 +83,8 @@ var glass_interval_timer = <item:rsgauges:glass_interval_timer> as IIngredient;
 var glass_day_timer = <item:rsgauges:glass_day_timer> as IIngredient;
 var glass_entity_detector = <item:rsgauges:glass_entity_detector> as IIngredient;
 
+var small_light_switch = <item:rsgauges:light_switch> as IIngredient;
+
 # items for creating new recipe
 var air = <item:minecraft:air> as IIngredient;
 
@@ -425,3 +427,6 @@ var changeGlassSensor = [
 for i in 0 .. 4 {
     deleteRecipeAndCreateShaped(nameGlassSensor[i], recipeGlassSensor[i], [[iron_nugget, iron_nugget], [glass_block, changeGlassSensor[i]]]);
 }
+
+# change small switch
+deleteRecipeAndCreateShaped("small_light_switch", small_light_switch, [[iron_nugget, lever]]);
