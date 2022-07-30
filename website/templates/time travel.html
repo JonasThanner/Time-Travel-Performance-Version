@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/minecraftia" type="text/css"/> 
+    <link href="http://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <title>{% block title %}{% endblock %} - Time Travel</title>
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='Time Travel.png') }}" alt="Time Travel" width="100%">
+    </header>
+    <nav>
+        <div class="nav_container">
+            <ul>
+                {% for item in nav.top %}
+                <li class="{{ 'active' if item.is_active else '' }}">
+                    <a href="{{ item.url }}">{{ item.label }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <img src="{{ url_for('static', filename='navbar.png') }}" alt="" width="100%" height="81px">
+        </div>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>

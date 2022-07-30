@@ -1,37 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="http://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
-    <title>Time Travel - Home</title>
-</head>
-
-<body>
-    <header>
-        <img src="{{ url_for('static', filename='Time Travel.png') }}" alt="Time Travel" width="100%">
-    </header>
-    <nav>
-        <div class="nav_container">
-            <ul>
-                <li><a class="active" href="">Home</a></li>
-                <li><a href="">Instalation</a></li>
-                <li><a href="">Storry</a></li>
-                <li><a href="">Tipps</a></li>
-            </ul>
-            <img src="{{ url_for('static', filename='navbar.png') }}" alt="" width="100%" height="81px">
-        </div>
-    </nav>
-    <main>
-        <section>
-            <h1>Information</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi corporis perferendis architecto corrupti impedit? Adipisci, eligendi minus! Quidem, voluptatibus? Placeat perferendis ab hic nesciunt et quam, quidem exercitationem facilis!</p>
-            <hr>
-        </section>
-    </main>
-</body>
-
-</html>
+{% extends "time travel.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section>
+    <h1>Was ist Time Travel?</h1>
+    <div class="board">
+        <p>
+            Time Travel ist eine Zusammenstellung aus aus ca 100 Minecraft-Mods aus den verschiedensten Bereichen der
+            Modding-Szene. Das Spektrum reichen von einfachen Bugfixes und Performance-Verbesserungen bis hin zu ganz
+            neuen Spielmechaniken und Herangehensweisen. Darunter befinden sich alte Classiker, die viele schon von
+            früher kennen, die aber jetzt mit neuen Funktionen und Rezepten versehen wurden aber auch neuere Mods, von
+            denen viele noch nie gehört haben oder sie noch nie ausprobiert haben.
+        </p>
+        <p>
+            All das erwartet euch ab dem 12.08.2022.
+            Genauere Infos ab 05.08.2022.
+        </p>
+    </div>
+</section>
+{% endblock %}
