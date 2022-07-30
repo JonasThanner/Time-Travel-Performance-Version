@@ -45,7 +45,6 @@ li a {
 }
 
 li a:hover {
-  /* color: #352808; */
   text-shadow: 2px 0 white, 0 2px black, -2px 0 black, 0 -2px white;
 }
 
@@ -76,8 +75,17 @@ section .board {
 }
 
 section p {
-  font-family: 'MinecraftiaRegular';
-  background: url(border.png);
+  font-family: 'MinecraftiaRegular', sans-serif;
+  background: url(text_texture.png);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip:text;
+  background-clip:text;
+  font-size: larger;
+}
+
+section strong {
+  background: url(navbar.png);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -moz-background-clip:text;
