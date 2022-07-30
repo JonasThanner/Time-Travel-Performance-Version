@@ -12,3 +12,4 @@ src/journeymap/*
 
 # website
 website/venv/
+__pycache__
