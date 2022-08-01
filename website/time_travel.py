@@ -6,7 +6,7 @@ nav = Navigation(app)
 
 nav.Bar('top', [
     nav.Item('Home', 'home'),
-    nav.Item('Storry', 'storry'),
+    nav.Item('Story', 'story'),
     nav.Item('Instalation', 'instalation'),
     nav.Item('Tipps', 'tipps')
 ])
@@ -17,9 +17,9 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/storry")
-def storry():
-    return render_template("storry.html")
+@app.route("/story")
+def story():
+    return render_template("story.html")
 
 
 @app.route("/installation")
