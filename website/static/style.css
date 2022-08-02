@@ -69,8 +69,8 @@ section h1 {
 section .board {
   text-align: justify;
   border: 55px solid blue;
-	border-image-source: url(border.png);
-	border-image-slice: 33%;
+  border-image-source: url(border.png);
+  border-image-slice: 33%;
   background: url(text_background.png);
 }
 
@@ -79,8 +79,8 @@ section p {
   background: url(text_texture.png);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  -moz-background-clip:text;
-  background-clip:text;
+  -moz-background-clip: text;
+  background-clip: text;
   font-size: larger;
 }
 
@@ -88,6 +88,6 @@ section strong {
   background: url(navbar.png);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  -moz-background-clip:text;
-  background-clip:text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
