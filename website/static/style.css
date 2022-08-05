@@ -66,6 +66,17 @@ section h1 {
   text-shadow: 2px 0 white, 0 2px black, -2px 0 black, 0 -2px white;
 }
 
+section h2 {
+  font-family: 'MinecraftiaRegular', sans-serif;
+  font-size: 1.5em;
+  background: url(copper.png);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 10px white;
+}
+
 section .board {
   text-align: justify;
   border: 55px solid blue;
@@ -85,7 +96,7 @@ section p {
 }
 
 section strong {
-  background: url(navbar.png);
+  background: url(copper.png);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -moz-background-clip: text;

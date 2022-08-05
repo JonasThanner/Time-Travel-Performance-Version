@@ -1,14 +1,13 @@
 from flask import Flask, render_template
 from flask_navigation import Navigation
 
-app = Flask(__name__)
+app = Flask(__name__, )
 nav = Navigation(app)
+
 
 nav.Bar('top', [
     nav.Item('Home', 'home'),
-    nav.Item('Story', 'story'),
-    nav.Item('Instalation', 'instalation'),
-    nav.Item('Tipps', 'tipps')
+    nav.Item('Story', 'story')
 ])
 
 
@@ -20,13 +19,3 @@ def home():
 @app.route("/story")
 def story():
     return render_template("story.html")
-
-
-@app.route("/installation")
-def instalation():
-    return render_template("instalation.html")
-
-
-@app.route("/tipps")
-def tipps():
-    pass
