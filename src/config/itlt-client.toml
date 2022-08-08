@@ -256,7 +256,7 @@
 				# 
 				# This is useful for preventing users from allocating excessive amounts of RAM
 				# to the point of causing nasty GC-related lag spikes as a result.
-				enableMaxMemoryRequirement = true
+				enableMaxMemoryRequirement = false
 
 			[Java.Memory.Max.Warning]
 				# 
@@ -265,7 +265,7 @@
 				# 
 				# This is useful for warning users that are allocating excessive amounts of RAM
 				# to the point of causing nasty GC-related lag spikes as a result.
-				enableMaxMemoryWarning = true
+				enableMaxMemoryWarning = false
 				# 
 				# The maximum recommended amount of allocated RAM in GB needed to skip the warning
 				# message when launching the modpack.
