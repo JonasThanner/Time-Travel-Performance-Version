@@ -1,10 +1,4 @@
 
-[Internal]
-	# 
-	# The version of itlt that created this config file. Intended to be used for migrating
-	# config changes when you update the mod. Please don't touch this, this is for itlt itself to change.
-	configVersion = "2.1.2"
-
 [Java]
 
 	[Java.Advanced]
@@ -256,7 +250,7 @@
 				# 
 				# This is useful for preventing users from allocating excessive amounts of RAM
 				# to the point of causing nasty GC-related lag spikes as a result.
-				enableMaxMemoryRequirement = false
+				enableMaxMemoryRequirement = true
 
 			[Java.Memory.Max.Warning]
 				# 
@@ -327,6 +321,12 @@
 			# This is mainly useful for when you're using an unsupported version of this mod and
 			# the default guide's outdated or you're using your own custom launcher.
 			enableCustom64bitJavaGuide = false
+
+[Internal]
+	# 
+	# The version of itlt that created this config file. Intended to be used for migrating
+	# config changes when you update the mod. Please don't touch this, this is for itlt itself to change.
+	configVersion = "2.1.4"
 
 [ServerList]
 	# 
