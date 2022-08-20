@@ -92,7 +92,7 @@
 
 	[performance.model-building]
 		#How many CPU threads should be used to build models?
-		#Range: 1 ~ 16
+		#Range: 1 ~ 32
 		thread-count = 4
 
 [gui]

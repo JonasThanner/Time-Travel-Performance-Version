@@ -1,16 +1,4 @@
 
-[ServerList]
-	# 
-	# Enable this to have itlt add default servers to the Multiplayer list from a JSON file.
-	# 
-	# Note: The JSON needs to be placed in config/itlt/servers.json
-	# 
-	# Warning: This feature is experimental and may change in future v2.x releases. Check the
-	# changelog before updating if you use this. The changelog will make any breaking changes
-	# to this feature clear. If there's no mention of this feature in the changelog, rest assured
-	# you can update without needing to make any changes to your servers.json.
-	enableCustomServerListEntries = false
-
 [Java]
 
 	[Java.Advanced]
@@ -338,7 +326,19 @@
 	# 
 	# The version of itlt that created this config file. Intended to be used for migrating
 	# config changes when you update the mod. Please don't touch this, this is for itlt itself to change.
-	configVersion = "2.1.2"
+	configVersion = "2.1.4"
+
+[ServerList]
+	# 
+	# Enable this to have itlt add default servers to the Multiplayer list from a JSON file.
+	# 
+	# Note: The JSON needs to be placed in config/itlt/servers.json
+	# 
+	# Warning: This feature is experimental and may change in future v2.x releases. Check the
+	# changelog before updating if you use this. The changelog will make any breaking changes
+	# to this feature clear. If there's no mention of this feature in the changelog, rest assured
+	# you can update without needing to make any changes to your servers.json.
+	enableCustomServerListEntries = false
 
 [Display]
 
@@ -366,7 +366,7 @@
 		# - "ModpackName v2 based on %mc" = "ModpackName v2 based on Minecraft* 1.17.1"
 		# 
 		# Note: enableCustomWindowTitle must be enabled for this to take effect.
-		customWindowTitleText = "Time Travel - %mc"
+		customWindowTitleText = "%autoName - %mc"
 		# 
 		# The text to use in place of %autoDetect if we're unable to automatically detect your
 		# modpack's display name.

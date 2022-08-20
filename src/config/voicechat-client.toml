@@ -86,4 +86,8 @@ audio_type = "NORMAL"
 #If the mod should load native libraries
 #If set to false, the Java Opus implementation will be used and the denoiser won't be available
 use_natives = true
+#The quality of the recorded audio
+#0 = highest quality, 9 = lowest quality
+#Range: 0 ~ 9
+recording_quality = 2
 
