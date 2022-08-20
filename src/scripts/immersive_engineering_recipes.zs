@@ -167,16 +167,10 @@ for item in removelist{
 */
 
 # made immersiveengineering recipes only use water as water instead of chocolate, honey, etc.
-craftingTable.removeByName(["immersiveengineering:crafting/paper_from_sawdust", "immersiveengineering:crafting/concrete", "immersiveengineering:crafting/concrete2"]);
+craftingTable.removeByName(["immersiveengineering:crafting/paper_from_sawdust", "immersiveengineering:crafting/concrete"]);
 craftingTable.addShapeless("crafting/paper_from_sawdust", <item:minecraft:paper> * 2, [<tag:items:forge:dusts/wood>, <tag:items:forge:dusts/wood>, <tag:items:forge:dusts/wood>, <tag:items:forge:dusts/wood>,<item:minecraft:water_bucket>]);
 craftingTable.addShaped("crafting/concrete", <item:immersiveengineering:concrete> * 8,[
     [<tag:items:forge:sand>,    <tag:items:forge:clay>,         <tag:items:forge:sand>],
     [<tag:items:forge:gravel>,  <item:minecraft:water_bucket>,  <tag:items:forge:gravel>],
     [<tag:items:forge:sand>,    <tag:items:forge:clay>,         <tag:items:forge:sand>]
-]);
-
-craftingTable.addShaped("crafting/concrete2", <item:immersiveengineering:concrete> * 12,[
-    [<tag:items:forge:slag>,    <tag:items:forge:clay>,         <tag:items:forge:slag>],
-    [<tag:items:forge:gravel>,  <item:minecraft:water_bucket>,  <tag:items:forge:gravel>],
-    [<tag:items:forge:slag>,    <tag:items:forge:clay>,         <tag:items:forge:slag>]
 ]);
