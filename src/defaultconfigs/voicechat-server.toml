@@ -30,9 +30,9 @@
 	#Range: > 1000
 	keep_alive = 1000
 	#If group chats are allowed
-	enable_groups = false
+	enable_groups = true
 	#If players in group chats can be heard locally
-	open_groups = false
+	open_groups = true
 	#The host name that clients should use to connect to the voice chat
 	#Don't change this value if you don't know what you are doing
 	voice_host = ""
