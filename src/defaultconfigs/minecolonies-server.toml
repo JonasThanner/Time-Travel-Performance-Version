@@ -112,7 +112,7 @@
 	#Should players be allowed to use the /mc colony addOfficer command? [Default: true]
 	canplayeruseaddofficercommand = true
 	#Should players be allowed to use the /mc colony delete command? [Default: true]
-	canplayerusedeletecolonycommand = true
+	canplayerusedeletecolonycommand = false
 	#Amount of attempts to find a safe random teleport (with /mc rtp). [Default: 4, min: 1, max: 10]
 	#Range: 1 ~ 10
 	numberofattemptsforsafetp = 4
