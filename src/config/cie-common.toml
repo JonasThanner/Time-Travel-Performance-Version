@@ -19,7 +19,7 @@
 	#Should item entities be combined in the world?
 	#Default = false
 	#Vanilla = true
-	Combining = false
+	Combining = true
 	#Tools which enable picking up items automatically when held in the off-hand
 	"Collection Tool" = []
 	#Tools which enable picking up items automatically when held
