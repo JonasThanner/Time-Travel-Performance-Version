@@ -20,6 +20,11 @@ var engine_truck = <item:car:engine_truck> as IIngredient;
 var carWheel = <item:car:wheel> as IIngredient;
 var bigCarWheel = <item:car:big_wheel> as IIngredient;
 
+var gasStation = <item:car:gas_station> as IIngredient;
+
+var carWorkshop = <item:car:car_workshop> as IIngredient;
+var carWorkshopOutter = <item:car:car_workshop_outter> as IIngredient;
+
 # items for building new recipes
 var steel_ingot = <tag:items:forge:ingots/steel> as IIngredient;
 var steel_rods = <tag:items:forge:rods/steel> as IIngredient;
@@ -34,6 +39,18 @@ var belt = <item:create:belt_connector> as IIngredient;
 
 var air = <item:minecraft:air> as IItemStack;
 
+var copperValveHandle = <item:create:copper_valve_handle> as IIngredient;
+var fluidPipe = <item:create:fluid_pipe> as IIngredient;
+var tank = <item:car:tank> as IIngredient;
+var redstoneComperator = <item:minecraft:comparator> as IIngredient;
+var redstone = <item:minecraft:redstone> as IIngredient;
+var smoothStoneSlap = <item:minecraft:smooth_stone_slab> as IIngredient;
+var ironIngot = <item:minecraft:iron_ingot> as IIngredient;
+var glasMinecraft = <item:minecraft:glass> as IIngredient;
+var fluidTank = <item:create:fluid_tank> as IIngredient;
+
+var mechanicalPiston = <item:create:mechanical_piston> as IIngredient;
+
 var itemRecipiesForRemoving = [
     asphalt,
     engine_piston,
@@ -41,7 +58,10 @@ var itemRecipiesForRemoving = [
     engine_6_cylinder,
     engine_truck,
     carWheel,
-    bigCarWheel
+    bigCarWheel,
+    gasStation,
+    tank,
+    carWorkshop
 ] as IIngredient[];
 
 for item in itemRecipiesForRemoving{
@@ -51,7 +71,7 @@ for item in itemRecipiesForRemoving{
 # new recipe 
 <recipetype:create:mixing>.addRecipe("asphalt", <constant:create:heat_condition:superheated>, [<item:car:asphalt> * 2,(<item:car:asphalt>) % 50], [<tag:items:forge:slag>, <tag:items:forge:gravel>, <tag:items:forge:sand>], null, 200);
 
-createMechanicalCraftingRecipe("mechanical_crafting_engine_piston", engine_piston, [[air, air, steel_ingot], [air, air, steel_rods], [air, air, steel_rods]]);
+createMechanicalCraftingRecipe("mechanical_crafting_engine_piston", engine_piston, [[steel_ingot], [steel_rods], [steel_rods]]);
 createMechanicalCraftingRecipe("mechanical_crafting_engine_3_cylinder", engine_3_cylinder, [[steel_block, nossel, nossel, nossel, steel_block], [iron_block, spark, spark, spark, iron_block], [iron_block, engine_piston, engine_piston, engine_piston, iron_block], [iron_block, steel_block, steel_block, steel_block, iron_block]]);
 createMechanicalCraftingRecipe("mechanical_crafting_engine_6_cylinder", engine_6_cylinder, [[steel_block, cogwheel, cogwheel, cogwheel, steel_block], [iron_block, engine_3_cylinder, belt, engine_3_cylinder, iron_block], [iron_block, bracket, propeller, bracket, iron_block], [iron_block, steel_block, steel_block, steel_block, iron_block]]);
 createMechanicalCraftingRecipe("mechanical_crafting_truck_engine", engine_truck, [[steel_block, iron_block, nossel, nossel, nossel, nossel, iron_block, steel_block], [steel_block, belt, spark, spark, spark, spark, belt, steel_block], [steel_block, engine_6_cylinder, engine_piston, engine_piston, engine_piston, engine_piston, engine_6_cylinder, steel_block], [steel_block, belt, bracket, cogwheel, cogwheel, bracket, belt, steel_block], [steel_block, iron_block, iron_block, propeller, propeller, iron_block, iron_block, steel_block]]);
@@ -224,8 +244,8 @@ for y in 0 .. 16 {
 var aluminium = <tag:items:forge:ingots/aluminum> as IIngredient;
 var steel = <tag:items:forge:ingots/steel> as IIngredient;
 
-createCraftingRecipeShaped("car_wheel", carWheel, [[air, belt, air], [belt, aluminium, belt], [air, belt, air]]);
-createMechanicalCraftingRecipe("big_car_wheel", bigCarWheel, [[air, belt, air], [belt, steel, belt], [air, belt, air]]);
+createCraftingRecipeShaped("crafting_table_car_wheel", carWheel, [[air, belt, air], [belt, aluminium, belt], [air, belt, air]]);
+createMechanicalCraftingRecipe("mechanical_crafting_big_car_wheel", bigCarWheel, [[air, belt, air], [belt, steel, belt], [air, belt, air]]);
 
 # remove fule production
 var removeFuleProductiomItems = [
@@ -249,3 +269,12 @@ var removeFuleProductiomItems = [
 for item in removeFuleProductiomItems {
     removeItem(item);
 }
+
+# change recipe gas station
+createMechanicalCraftingRecipe("mechanical_crafting_gas_station", gasStation, [[air, iron_block, iron_block, iron_block, air], [belt, iron_block, belt, iron_block, belt], [air, iron_block, redstone, iron_block, copperValveHandle], [fluidPipe, iron_block, redstoneComperator, iron_block, air], [smoothStoneSlap, tank, tank, tank, smoothStoneSlap]]);
+
+# change recipe tank
+createMechanicalCraftingRecipe("mechanical_crafting_tank", tank, [[ironIngot, glasMinecraft, ironIngot], [glasMinecraft, fluidTank, glasMinecraft], [ironIngot, glasMinecraft, ironIngot]]); 
+
+# change recipe workshop
+createMechanicalCraftingRecipe("mechanical_crafting_car_workshop", carWorkshop, [[ironIngot, cogwheel, ironIngot], [mechanicalPiston, iron_block, mechanicalPiston], [ironIngot, belt, ironIngot]]);
