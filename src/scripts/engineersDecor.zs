@@ -24,7 +24,7 @@ for item in itemsToRemove {
     deleteCraftingRecipeByOutput(item);
 }
 
-createCraftingRecipeShaped("iron_inset_light", ironInsetLight, [[air, air, air], [glassPane, glassPane, glassPane], [metalBar, glowstone, metalBar]]);
-createCraftingRecipeShaped("iron_floor_edge_light", ironFloorEdgeLight, [[air, air, air], [glassPane, glowstone, glassPane], [metalBar, metalBar, metalBar]]);
+createCraftingRecipeShaped("iron_inset_light", ironInsetLight, [[glassPane, glassPane, glassPane], [metalBar, glowstone, metalBar]]);
+createCraftingRecipeShaped("iron_floor_edge_light", ironFloorEdgeLight, [[glassPane, glowstone, glassPane], [metalBar, metalBar, metalBar]]);
 createCraftingRecipeShaped("iron_bulb_light", ironBulbLight, [[glassPane, glassPane, glassPane], [glassPane, glowstone, glassPane], [metalBar, metalBar, metalBar]]);
-createCraftingRecipeShaped("iron_ceiling_edge_light", ironCeilingEdgeLight, [[air, air, air], [metalBar, glowstone, metalBar], [glassPane, glassPane, glassPane]]);
+createCraftingRecipeShaped("iron_ceiling_edge_light", ironCeilingEdgeLight, [[metalBar, glowstone, metalBar], [glassPane, glassPane, glassPane]]);
