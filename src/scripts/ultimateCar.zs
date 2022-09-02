@@ -5,9 +5,11 @@ import crafttweaker.api.ingredient.IIngredientWithAmount;
 import crafttweaker.api.fluid.IFluidStack;
 import mods.create.HeatCondition;
 import mods.create.MixingManager;
-
 import crafttweaker.api.tag.TagManager;
+import mods.jei.JEI;
+import mods.jei.component.JeiIngredient;
 
+# adding immersive engineering diesel for ultimate car mod gas stations
 <tag:fluids:car:gas_station>.add(<fluid:immersiveengineering:biodiesel>);
 
 # items for deleting recipe
@@ -51,6 +53,7 @@ var fluidTank = <item:create:fluid_tank> as IIngredient;
 
 var mechanicalPiston = <item:create:mechanical_piston> as IIngredient;
 
+# remove items 
 var itemRecipiesForRemoving = [
     asphalt,
     engine_piston,
@@ -278,3 +281,10 @@ createMechanicalCraftingRecipe("mechanical_crafting_tank", tank, [[ironIngot, gl
 
 # change recipe workshop
 createMechanicalCraftingRecipe("mechanical_crafting_car_workshop", carWorkshop, [[ironIngot, cogwheel, ironIngot], [mechanicalPiston, iron_block, mechanicalPiston], [ironIngot, belt, ironIngot]]);
+
+# remove ultimate car mod diesel 
+var carmodBioDiesel = <fluid:car:bio_diesel> as JeiIngredient;
+var carmodBioDieselFlowing = <fluid:car:bio_diesel_flowing> as JeiIngredient;
+
+JEI.hideIngredient(carmodBioDiesel) as void;
+JEI.hideIngredient(carmodBioDieselFlowing) as void;
