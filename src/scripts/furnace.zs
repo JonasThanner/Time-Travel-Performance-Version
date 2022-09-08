@@ -22,7 +22,8 @@ val tagToRemoveFromFurnance = [
     <tag:items:forge:ingots/zinc>,
     <tag:items:forge:ingots/uranium>,
     <tag:items:forge:ingots/constantan>,
-    <tag:items:forge:ingots/electrum>
+    <tag:items:forge:ingots/electrum>,
+    <item:mna:purified_vinteum_ingot>
 ] as IIngredient[];
 
 # for loop for removing recipes
