@@ -51,3 +51,9 @@ createCraftingRecipeShaped("craftingtable_sailframe", frame, [[stick, stick, sti
 // changing recipe for sail
 // will remove the possibility to get it from fetcher and blacksmith
 createCraftingRecipeShaped("craftingtable_sail", sail, [[air, air, air], [frame, toughFabric, air], [air, air, air]]);
+
+// adding deepslate to crushing wheel
+var cobbledDeepslate = <item:minecraft:cobbled_deepslate> as IIngredient;
+var gravel = <item:minecraft:gravel> as IIngredient;
+
+<recipetype:create:crushing>.addRecipe("crushed_deepslate", [<item:minecraft:gravel>], cobbledDeepslate, 300);
