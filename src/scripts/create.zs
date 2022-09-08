@@ -48,5 +48,4 @@ createCraftingRecipeShaped("craftingtable_sailframe", frame, [[stick, stick, sti
 
 // changing recipe for sail
 // will remoce the possibility to get it from fetcher and blacksmith
-createCraftingRecipeShaped("craftingtable_sail", sail, [[air, air, air], [frame, toughFabric, air], [air]]);
-<recipetype:create:mechanical_crafting>.addRecipe("mechanicalcrafting_sail", sail, [[frame, toughFabric, air]]);
+createCraftingRecipeShaped("craftingtable_sail", sail, [[air, air, air], [frame, toughFabric, air], [air, air, air]]);
