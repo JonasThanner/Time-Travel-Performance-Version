@@ -9,10 +9,10 @@ import crafttweaker.api.tag.TagManager;
 import mods.jei.JEI;
 import mods.jei.component.JeiIngredient;
 
-# adding immersive engineering diesel for ultimate car mod gas stations
+// adding immersive engineering diesel for ultimate car mod gas stations
 <tag:fluids:car:gas_station>.add(<fluid:immersiveengineering:biodiesel>);
 
-# items for deleting recipe
+// items for deleting recipe
 var asphalt = <item:car:asphalt> as IIngredient;
 var engine_piston = <item:car:engine_piston> as IIngredient;
 var engine_3_cylinder = <item:car:engine_3_cylinder> as IIngredient;
@@ -27,7 +27,7 @@ var gasStation = <item:car:gas_station> as IIngredient;
 var carWorkshop = <item:car:car_workshop> as IIngredient;
 var carWorkshopOutter = <item:car:car_workshop_outter> as IIngredient;
 
-# items for building new recipes
+// items for building new recipes
 var steel_ingot = <tag:items:forge:ingots/steel> as IIngredient;
 var steel_rods = <tag:items:forge:rods/steel> as IIngredient;
 var spark = <item:botania:spark> as IIngredient;
@@ -53,7 +53,7 @@ var fluidTank = <item:create:fluid_tank> as IIngredient;
 
 var mechanicalPiston = <item:create:mechanical_piston> as IIngredient;
 
-# remove items 
+// remove items 
 var itemRecipiesForRemoving = [
     asphalt,
     engine_piston,
@@ -71,7 +71,7 @@ for item in itemRecipiesForRemoving{
     deleteCraftingRecipeByOutput(item);
 }
 
-# new recipe 
+// new recipe 
 <recipetype:create:mixing>.addRecipe("asphalt", <constant:create:heat_condition:superheated>, [<item:car:asphalt> * 2,(<item:car:asphalt>) % 50], [<tag:items:forge:slag>, <tag:items:forge:gravel>, <tag:items:forge:sand>], null, 200);
 
 createMechanicalCraftingRecipe("mechanical_crafting_engine_piston", engine_piston, [[steel_ingot], [steel_rods], [steel_rods]]);
@@ -84,7 +84,7 @@ var iron_plade = <tag:items:forge:plates/iron> as IIngredient;
 var iron_light_bulb = <item:engineersdecor:iron_bulb_light> as IIngredient;
 var glas = <tag:items:forge:glass> as IIngredient;
 
-# array for deleting and changing recipes
+// array for deleting and changing recipes
 var bodiesToChange = [
     <item:car:oak_body>,
     <item:car:warped_body>,
@@ -129,7 +129,7 @@ var nameOfBody = [
     "spruce"
 ] as string[];
 
-# deleting and creating recipes in for loop
+// deleting and creating recipes in for loop
 for i in 0 .. 8 {
     deleteCraftingRecipeByOutput(bodiesToChange[i]);
     deleteCraftingRecipeByOutput(bigBodiesToChange[i]);
@@ -137,7 +137,7 @@ for i in 0 .. 8 {
     createMechanicalCraftingRecipe("mechanical_crafting_big_bodies_" + nameOfBody[i] + "body", bigBodiesToChange[i], [[air, air, typesOfWood[i], typesOfWood[i], typesOfWood[i]], [air, air, glas, iron_rods, iron_rods], [typesOfWood[i], typesOfWood[i], iron_rods, iron_plade, iron_plade], [iron_light_bulb, typesOfWood[i], iron_plade, iron_plade, iron_plade]]);
 }
 
-# array for deleting and changing
+// array for deleting and changing
 var limeBodiesToChange = [
     <item:car:cyan_transporter_body>,
     <item:car:gray_transporter_body>,
@@ -233,7 +233,7 @@ var concreteCollor = [
     "red"
 ] as string[];
 
-# for loop for deleting and creating new recipes
+// for loop for deleting and creating new recipes
 for y in 0 .. 16 {
     deleteCraftingRecipeByOutput(limeBodiesToChange[y]);
     deleteCraftingRecipeByOutput(limeSuvBodiesToChange[y]);
@@ -243,14 +243,14 @@ for y in 0 .. 16 {
     createMechanicalCraftingRecipe("mechanical_crafting_sportcar_" + concreteCollor[y] + "_body", limeSportBodiesToChange[y], [[air, glas, iron_rods, air, air], [concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y], concreteTypes[y]], [iron_light_bulb, concreteTypes[y], iron_plade, iron_plade, iron_plade]]);
 }
 
-# new wheel recipes
+// new wheel recipes
 var aluminium = <tag:items:forge:ingots/aluminum> as IIngredient;
 var steel = <tag:items:forge:ingots/steel> as IIngredient;
 
 createCraftingRecipeShaped("crafting_table_car_wheel", carWheel, [[air, belt, air], [belt, aluminium, belt], [air, belt, air]]);
 createMechanicalCraftingRecipe("mechanical_crafting_big_car_wheel", bigCarWheel, [[air, belt, air], [belt, steel, belt], [air, belt, air]]);
 
-# remove fule production
+// remove fule production
 var removeFuleProductiomItems = [
     <item:car:oilmill>,
     <item:car:blastfurnace>,
@@ -273,18 +273,11 @@ for item in removeFuleProductiomItems {
     removeItem(item);
 }
 
-# change recipe gas station
+// change recipe gas station
 createMechanicalCraftingRecipe("mechanical_crafting_gas_station", gasStation, [[air, iron_block, iron_block, iron_block, air], [belt, iron_block, belt, iron_block, belt], [air, iron_block, redstone, iron_block, copperValveHandle], [fluidPipe, iron_block, redstoneComperator, iron_block, air], [smoothStoneSlap, tank, tank, tank, smoothStoneSlap]]);
 
-# change recipe tank
+// change recipe tank
 createMechanicalCraftingRecipe("mechanical_crafting_tank", tank, [[ironIngot, glasMinecraft, ironIngot], [glasMinecraft, fluidTank, glasMinecraft], [ironIngot, glasMinecraft, ironIngot]]); 
 
-# change recipe workshop
+// change recipe workshop
 createMechanicalCraftingRecipe("mechanical_crafting_car_workshop", carWorkshop, [[ironIngot, cogwheel, ironIngot], [mechanicalPiston, iron_block, mechanicalPiston], [ironIngot, belt, ironIngot]]);
-
-# remove ultimate car mod diesel 
-var carmodBioDiesel = <fluid:car:bio_diesel> as JeiIngredient;
-var carmodBioDieselFlowing = <fluid:car:bio_diesel_flowing> as JeiIngredient;
-
-JEI.hideIngredient(carmodBioDiesel) as void;
-JEI.hideIngredient(carmodBioDieselFlowing) as void;

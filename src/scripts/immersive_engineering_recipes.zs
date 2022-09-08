@@ -1,5 +1,6 @@
 import crafttweaker.api.ingredient.IIngredient;
 
+// items to edit recipe
 var removelist = [
     <item:immersiveengineering:coil_hv>,
     <item:immersiveengineering:coil_mv>,
@@ -21,56 +22,56 @@ for item in removelist{
 }
 
 
-#High-Voltage Coil Block
+// High-Voltage Coil Block
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/coil_hv", <item:immersiveengineering:coil_hv>, [
     [<item:immersiveengineering:wirecoil_steel>,	<item:immersiveengineering:wirecoil_steel>, <item:immersiveengineering:wirecoil_steel>],
     [<item:immersiveengineering:wirecoil_steel>,	<item:create:shaft>,	                    <item:immersiveengineering:wirecoil_steel>],
     [<item:immersiveengineering:wirecoil_steel>,	<item:immersiveengineering:wirecoil_steel>, <item:immersiveengineering:wirecoil_steel>]
 ]);
 
-#Electrum Coil Block
+// Electrum Coil Block
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/coil_mv", <item:immersiveengineering:coil_mv>, [
     [<item:immersiveengineering:wirecoil_electrum_ins>,	<item:immersiveengineering:wirecoil_electrum_ins>,  <item:immersiveengineering:wirecoil_electrum_ins>],
     [<item:immersiveengineering:wirecoil_electrum_ins>,	<item:create:shaft>,	                            <item:immersiveengineering:wirecoil_electrum_ins>],
     [<item:immersiveengineering:wirecoil_electrum_ins>, <item:immersiveengineering:wirecoil_electrum_ins>,  <item:immersiveengineering:wirecoil_electrum_ins>]
 ]);
 
-#Copper Coil Block
+// Copper Coil Block
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/coil_lv", <item:immersiveengineering:coil_lv>, [
     [<item:immersiveengineering:wirecoil_copper_ins>,	<item:immersiveengineering:wirecoil_copper_ins>,    <item:immersiveengineering:wirecoil_copper_ins>],
     [<item:immersiveengineering:wirecoil_copper_ins>,	<item:create:shaft>,	                            <item:immersiveengineering:wirecoil_copper_ins>],
     [<item:immersiveengineering:wirecoil_copper_ins>,   <item:immersiveengineering:wirecoil_copper_ins>,    <item:immersiveengineering:wirecoil_copper_ins>]
 ]);
 
-#Kinetic Dynamo
+// Kinetic Dynamo
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/dynamo", <item:immersiveengineering:dynamo>, [
     [<tag:items:forge:plates/iron>,         <tag:items:forge:wires/copper>,     <tag:items:forge:plates/iron>],
     [<item:immersiveengineering:coil_lv>,   <item:createaddition:alternator>,   <item:immersiveengineering:coil_lv>],
     [<tag:items:forge:plates/iron>,         <tag:items:forge:wires/copper>,     <tag:items:forge:plates/iron>]
 ]);
 
-#Coke Brick
+// Coke Brick
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/cokebrick", <item:immersiveengineering:cokebrick>, [
     [<item:immersive_weathering:deepslate_brick>,   <item:immersive_weathering:deepslate_brick>,    <item:immersive_weathering:deepslate_brick>],
     [<item:immersive_weathering:deepslate_brick>,   <item:tconstruct:grout>,                        <item:immersive_weathering:deepslate_brick>],
     [<item:immersive_weathering:deepslate_brick>,   <item:immersive_weathering:deepslate_brick>,    <item:immersive_weathering:deepslate_brick>]
 ]);
 
-#Blast Brick
+// Blast Brick
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/blastbrick", <item:immersiveengineering:blastbrick>, [
     [<tag:items:forge:ingots/nether_brick>, <tag:items:forge:ingots/nether_brick>,  <tag:items:forge:ingots/nether_brick>],
     [<tag:items:forge:ingots/nether_brick>, <item:minecraft:magma_cream>,           <tag:items:forge:ingots/nether_brick>],
     [<tag:items:forge:ingots/nether_brick>, <tag:items:forge:ingots/nether_brick>,  <tag:items:forge:ingots/nether_brick>]
 ]);
 
-#Windmill
+// Windmill
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/windmill", <item:immersiveengineering:windmill>, [
     [<item:immersiveengineering:windmill_blade>,    <item:immersiveengineering:windmill_blade>, <item:immersiveengineering:windmill_blade>],
     [<item:immersiveengineering:windmill_blade>,    <item:create:shaft>,                        <item:immersiveengineering:windmill_blade>],
     [<item:immersiveengineering:windmill_blade>,    <item:immersiveengineering:windmill_blade>, <item:immersiveengineering:windmill_blade>]
 ]);
 
-#Water Wheel
+// Water Wheel
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/watermill", <item:immersiveengineering:watermill>, [
     [<item:minecraft:air>,                              <item:minecraft:air>,                           <item:immersiveengineering:waterwheel_segment>, <item:minecraft:air>,                           <item:minecraft:air>],
     [<item:minecraft:air>,                              <item:immersiveengineering:waterwheel_segment>, <item:immersiveengineering:stick_treated>,      <item:immersiveengineering:waterwheel_segment>, <item:minecraft:air>],
@@ -79,7 +80,7 @@ for item in removelist{
     [<item:minecraft:air>,                              <item:minecraft:air>,                           <item:immersiveengineering:waterwheel_segment>, <item:minecraft:air>,                           <item:minecraft:air>]
 ]);
 
-#Generator Block
+// Generator Block
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/generator", <item:immersiveengineering:generator>, [
     [<item:minecraft:air>,                  <tag:items:forge:sheetmetals/steel>,   <tag:items:forge:plates/electrum>,      <tag:items:forge:sheetmetals/steel>,   <item:minecraft:air>],
     [<tag:items:forge:sheetmetals/steel>,  <tag:items:forge:wires/copper>,         <item:createaddition:redstone_relay>,   <tag:items:forge:wires/copper>,         <tag:items:forge:sheetmetals/steel>],
@@ -88,7 +89,7 @@ for item in removelist{
     [<item:minecraft:air>,                  <tag:items:forge:sheetmetals/steel>,   <tag:items:forge:plates/electrum>,      <tag:items:forge:sheetmetals/steel>,   <item:minecraft:air>]
 ]);
 
-#Radiator Block
+// Radiator Block
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/radiator", <item:immersiveengineering:radiator>, [
     [<item:minecraft:air>,                  <tag:items:forge:sheetmetals/steel>,    <tag:items:forge:plates/copper>,    <tag:items:forge:sheetmetals/steel>,    <item:minecraft:air>],
     [<tag:items:forge:sheetmetals/steel>,   <item:create:fluid_pipe>,               <item:create:encased_fan>,          <item:create:fluid_pipe>,               <tag:items:forge:sheetmetals/steel>],
@@ -97,7 +98,7 @@ for item in removelist{
     [<item:minecraft:air>,                  <tag:items:forge:sheetmetals/steel>,    <tag:items:forge:plates/copper>,    <tag:items:forge:sheetmetals/steel>,    <item:minecraft:air>]
 ]);
 
-#Heavy Engineering Block
+// Heavy Engineering Block
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/heavy_engineering", <item:immersiveengineering:heavy_engineering>, [
     [<item:minecraft:air>,                          <tag:items:forge:sheetmetals/steel>,    <item:immersiveengineering:component_steel>,    <tag:items:forge:sheetmetals/steel>,    <item:minecraft:air>],
     [<tag:items:forge:sheetmetals/steel>,           <item:create:cogwheel>,                 <item:create:vertical_gearbox>,                 <item:create:cogwheel>,                 <tag:items:forge:sheetmetals/steel>],
@@ -106,7 +107,7 @@ for item in removelist{
     [<item:minecraft:air>,                          <tag:items:forge:sheetmetals/steel>,    <item:immersiveengineering:component_steel>,    <tag:items:forge:sheetmetals/steel>,    <item:minecraft:air>]
 ]);
 
-#Transformer
+// Transformer
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/transformer", <item:immersiveengineering:transformer>, [
     [<item:immersiveengineering:connector_mv>,  <item:minecraft:air>,                           <item:immersiveengineering:connector_lv>],
     [<tag:items:forge:sheetmetals/steel>,       <tag:items:forge:sheetmetals/steel>,            <tag:items:forge:sheetmetals/steel>],
@@ -115,7 +116,7 @@ for item in removelist{
     [<tag:items:forge:sheetmetals/steel>,       <tag:items:forge:sheetmetals/steel>,            <tag:items:forge:sheetmetals/steel>,]
 ]);
 
-#HV Transformer
+// HV Transformer
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/transformer_hv", <item:immersiveengineering:transformer_hv>, [
     [<item:immersiveengineering:connector_hv>,  <item:minecraft:air>,                           <item:immersiveengineering:connector_lv>],
     [<tag:items:forge:sheetmetals/steel>,       <tag:items:forge:sheetmetals/steel>,            <tag:items:forge:sheetmetals/steel>],
@@ -124,7 +125,7 @@ for item in removelist{
     [<tag:items:forge:sheetmetals/steel>,       <tag:items:forge:sheetmetals/steel>,            <tag:items:forge:sheetmetals/steel>]
 ]);
 
-#Standard 3x3
+// Standard 3x3
 /*
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/name", output, [
     [topleft, top, topright],
@@ -133,7 +134,7 @@ for item in removelist{
 ]);
 */
 
-#Star
+// Star
 /*
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/name", output, [
     [<item:minecraft:air>, <item:minecraft:air>, fartop, <item:minecraft:air>, <item:minecraft:air>],
@@ -144,7 +145,7 @@ for item in removelist{
 ]);
 */
 
-#Wheal
+// Wheal
 /*
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/name", output, [
     [<item:minecraft:air>, toptopleft, fartop, toptopright, <item:minecraft:air>],
@@ -155,7 +156,7 @@ for item in removelist{
 ]);
 */
 
-#Transformator
+// Transformator
 /*
 <recipetype:create:mechanical_crafting>.addRecipe("crafting/name", output, [
     [toptopleft, <item:minecraft:air>, toptopright],
@@ -166,7 +167,7 @@ for item in removelist{
 ]);
 */
 
-# made immersiveengineering recipes only use water as water instead of chocolate, honey, etc.
+// made immersiveengineering recipes only use water as water instead of chocolate, honey, etc.
 craftingTable.removeByName(["immersiveengineering:crafting/paper_from_sawdust", "immersiveengineering:crafting/concrete"]);
 craftingTable.addShapeless("crafting/paper_from_sawdust", <item:minecraft:paper> * 2, [<tag:items:forge:dusts/wood>, <tag:items:forge:dusts/wood>, <tag:items:forge:dusts/wood>, <tag:items:forge:dusts/wood>,<item:minecraft:water_bucket>]);
 craftingTable.addShaped("crafting/concrete", <item:immersiveengineering:concrete> * 8,[

@@ -1,6 +1,6 @@
 import crafttweaker.api.ingredient.IIngredient;
 
-# items for recipes removing
+// items for recipes removing
 var industrial_estop = <item:rsgauges:industrial_estop_switch> as IIngredient;
 var industrial_small_lever = <item:rsgauges:industrial_small_lever> as IIngredient;
 var industrial_machine_switch = <item:rsgauges:industrial_machine_switch> as IIngredient;
@@ -85,7 +85,7 @@ var glass_entity_detector = <item:rsgauges:glass_entity_detector> as IIngredient
 
 var small_light_switch = <item:rsgauges:light_switch> as IIngredient;
 
-# items for creating new recipe
+// items for creating new recipe
 var air = <item:minecraft:air> as IIngredient;
 
 var red_concrete = <item:minecraft:red_concrete> as IIngredient;
@@ -121,7 +121,7 @@ var sprucewood_planks = <item:minecraft:spruce_planks> as IIngredient;
 var lightning_rod = <item:minecraft:lightning_rod> as IIngredient;
 var hopper = <item:minecraft:hopper> as IIngredient;
 
-# recipe deleting array
+// recipe deleting array
 var recipeToDelete = [
     industrial_estop,
     industrial_small_lever,
@@ -180,7 +180,7 @@ for items in recipeToDeleteByInput{
     deleteCraftingRecipeByItem(items);
 }
 
-# new recipes
+// new recipes
 createCraftingRecipeShaped("industrial_estop", industrial_estop, [[iron_nugget, redstone], [redstone, red_concrete]]);
 createCraftingRecipeShaped("industrial_machine_switch", industrial_machine_switch, [[iron_plate, glowstone], [redstone, glowstone]]);
 createCraftingRecipeShaped("industrial_rotary_machine_switch", industrial_rotary_machine_switch, [[iron_plate, redstone], [redstone_torch, lever]]);
@@ -199,7 +199,7 @@ createCraftingRecipeShaped("industrial_analog_horizontal_gauge", industrial_anal
 createCraftingRecipeShaped("industrial_vertical_bar_gauge", industrial_vertical_bar_gauge, [[comparator, glass], [redstone, glass]]);
 createCraftingRecipeShaped("industrial_small_digital_gauge", industrial_small_digital_gauge, [[redstone, iron_nugget], [industrial_comparator_switch, glass]]);
 
-# recipe to change
+// recipe to change
 var recipeLed = [
     industrial_green_led,
     industrial_white_led,
@@ -207,7 +207,7 @@ var recipeLed = [
     industrial_red_led
 ] as IIngredient[];
 
-# colors types of led
+// colors types of led
 var colorType = [
     green_dye,
     white_dye,
@@ -215,7 +215,7 @@ var colorType = [
     red_dye
 ] as IIngredient[];
 
-# name of led as string
+// name of led as string
 var nameLed = [
     "industrial_green_led",
     "industrial_white_led",
@@ -237,7 +237,7 @@ var nameBlinkingLed = [
     "industrial_red_blinking_led"
 ] as string[];
 
-# for loop to create and delete items
+// for loop to create and delete items
 for i in 0 .. 4 {
     deleteRecipeAndCreateShaped(nameLed[i], recipeLed[i], [[iron_plate, colorType[i]], [redstone, glowstone]]);
 }
@@ -246,7 +246,7 @@ for i in 0 .. 4 {
     deleteRecipeAndCreateShaped(nameBlinkingLed[i], recipeBlinkingLed[i], [[redstone_randomizer, colorType[i]], [glowstone, iron_plate]]);
 }
 
-# create recipe for nail button and nail lever
+// create recipe for nail button and nail lever
 createCraftingRecipeShaped("rustic_nail_button", rustic_nail_button, [[iron_nugget, redstone], [air, button]]);
 createCraftingRecipeShaped("rustic_nail_lever", rustic_nail_lever, [[iron_plate, redstone], [lever, rustic_nail_button]]);
 
@@ -281,7 +281,7 @@ for i in 0 .. 6 {
     deleteRecipeAndCreateShaped(nameRusticLever[i], recipeRusticLever[i], [[iron_plate, redstone], [air, changesInRecipe[i]]]);
 }
 
-# changing contact mat and trapdoors
+// changing contact mat and trapdoors
 createCraftingRecipeShaped("industrial_door_contact_mat", industrial_door_contact_mat, [[glowstone, iron_plate], [redstone, iron_pressure_plate]]);
 createCraftingRecipeShaped("industrial_contact_mat", industrial_contact_mat, [[glowstone, iron_nugget], [redstone, iron_pressure_plate]]);
 createCraftingRecipeShaped("industrial_shock_sensitive_contact_mat", industrial_shock_sensitive_contact_mat, [[redstone, iron_plate], [redstone, iron_pressure_plate]]);
@@ -289,7 +289,7 @@ createCraftingRecipeShaped("industrial_shock_sensitive_trapdoor", industrial_sho
 createCraftingRecipeShaped("industrial_high_sensitive_trapdoor", industrial_high_sensitive_trapdoor, [[redstone, iron_plate], [redstone, iron_trapdoor]]);
 createCraftingRecipeShaped("industrial_fallthrough_detector", industrial_fallthrough_detector, [[iron_rods, iron_rods], [redstone, glass_linear_entity_detector]]);
 
-# changing rustic contact mat and trapdoors
+// changing rustic contact mat and trapdoors
 var recipeRusticContactMapAndTrapdoors = [
     rustic_fallthrough_detector,
     rustic_high_sensitive_trapdoor,
@@ -321,7 +321,7 @@ for i in 0 .. 6 {
     deleteRecipeAndCreateShaped(nameRusticContactMapAndTrapdoors[i], recipeRusticContactMapAndTrapdoors[i], [[iron_plate, redstone], [air, changesRusticContactMapAndTrapdoors[i]]]);
 }
 
-# changing fancy button and lever
+// changing fancy button and lever
 var recipeFancyButtonsAndLevers = [
     fancy_bistable_switch_1,
     fancy_bistable_switch_2,
@@ -350,7 +350,7 @@ for i in 0 .. 5 {
     deleteRecipeAndCreateShaped(nameFancyButtonsAndLevers[i], recipeFancyButtonsAndLevers[i], [[gold_nugget, gold_nugget], [sprucewood_planks, changeFancyButtonsAndLevers[i]]]);
 }
 
-# changing glass buttons
+// changing glass buttons
 var recipeGlassButtons = [
     glass_button,
     glass_small_button,
@@ -373,10 +373,10 @@ for i in 0 .. 3 {
     deleteRecipeAndCreateShaped(nameGlassButtons[i], recipeGlassButtons[i], [[iron_nugget, redstone], [glass, changeGlassButtons[i]]]);
 }
 
-# changing glass switch
+// changing glass switch
 deleteRecipeAndCreateShaped("glass_touch_switch", glass_touch_switch, [[glass, redstone], [glass_touch_switch, glass]]);
 
-# change glass mat
+// change glass mat
 var recipeGlassMat = [
     glass_door_contact_mat,
     glass_contact_mat
@@ -396,13 +396,13 @@ for i in 0 .. 2 {
     deleteRecipeAndCreateShaped(nameGlassMat[i], recipeGlassMat[i], [[redstone, iron_nugget], [glass, changeGlassMat[i]]]);
 }
 
-# change sensors and timer
+// change sensors and timer
 deleteRecipeAndCreateShaped("industrial_interval_timer", industrial_interval_timer, [[iron_plate, redstone], [comparator, redstone_randomizer]]);
 deleteRecipeAndCreateShaped("industrial_linear_entity_detector", industrial_linear_entity_detector, [[iron_plate, iron_plate], [comparator, comparator]]);
 deleteRecipeAndCreateShaped("industrial_lightning_sensor", industrial_lightning_sensor, [[iron_rods, lightning_rod], [iron_plate, redstone]]);
 deleteRecipeAndCreateShaped("industrial_rain_sensor", industrial_rain_sensor, [[hopper,iron_plate], [iron_rods, redstone]]);
 
-# change glass sensors
+// change glass sensors
 var recipeGlassSensor = [
     glass_interval_timer,
     glass_linear_entity_detector,
@@ -428,5 +428,5 @@ for i in 0 .. 4 {
     deleteRecipeAndCreateShaped(nameGlassSensor[i], recipeGlassSensor[i], [[iron_nugget, iron_nugget], [glass_block, changeGlassSensor[i]]]);
 }
 
-# change small switch
+// change small switch
 deleteRecipeAndCreateShaped("small_light_switch", small_light_switch, [[iron_nugget, lever]]);
