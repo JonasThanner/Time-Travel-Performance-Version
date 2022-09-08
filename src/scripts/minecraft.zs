@@ -31,3 +31,16 @@ createMechanicalCraftingRecipe("mechanical_crafting_enchanted_goldapple", enchan
 // recipe adding for minecarts with deepslate furnace
 createCraftingRecipeShaped("furnace_minecart_with_iron", furnaceMinecart, [[air, air, air], [ironIngot, deepslateFurnace, ironIngot], [ironIngot, ironIngot, ironIngot]]);
 createCraftingRecipeShaped("furnace_minecart", furnaceMinecart, [[air, deepslateFurnace, air], [air, minecart, air], [air, air, air]]);
+
+// fixing campfire recipe
+// minecraft:logs balm:wooden_rods minecraft:coals 
+var logs = <tag:items:minecraft:logs> as IIngredient;
+var sticks = <tag:items:balm:wooden_rods> as IIngredient;
+var coals = <tag:items:minecraft:coals> as IIngredient;
+var soot = <item:immersive_weathering:soot> as IIngredient;
+
+var campfire = <item:minecraft:campfire> as IIngredient;
+
+deleteCraftingRecipeByOutput(campfire);
+createCraftingRecipeShaped("crafting_campfire", campfire, [[air, sticks, air], [sticks, coals, sticks], [logs, logs, logs]]);
+createCraftingRecipeShaped("crafting_campfire_soot", campfire, [[air, sticks, air], [sticks, soot, sticks], [logs, logs, logs]]);
