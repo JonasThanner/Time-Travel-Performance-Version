@@ -33,7 +33,6 @@ createCraftingRecipeShaped("furnace_minecart_with_iron", furnaceMinecart, [[air,
 createCraftingRecipeShaped("furnace_minecart", furnaceMinecart, [[air, deepslateFurnace, air], [air, minecart, air], [air, air, air]]);
 
 // fixing campfire recipe
-// minecraft:logs balm:wooden_rods minecraft:coals 
 var logs = <tag:items:minecraft:logs> as IIngredient;
 var sticks = <tag:items:balm:wooden_rods> as IIngredient;
 var coals = <tag:items:minecraft:coals> as IIngredient;
@@ -42,5 +41,14 @@ var soot = <item:immersive_weathering:soot> as IIngredient;
 var campfire = <item:minecraft:campfire> as IIngredient;
 
 deleteCraftingRecipeByOutput(campfire);
-createCraftingRecipeShaped("crafting_campfire", campfire, [[air, sticks, air], [sticks, coals, sticks], [logs, logs, logs]]);
-createCraftingRecipeShaped("crafting_campfire_soot", campfire, [[air, sticks, air], [sticks, soot, sticks], [logs, logs, logs]]);
+createCraftingRecipeShaped("campfire", campfire, [[air, sticks, air], [sticks, coals, sticks], [logs, logs, logs]]);
+createCraftingRecipeShaped("campfire_soot", campfire, [[air, sticks, air], [sticks, soot, sticks], [logs, logs, logs]]);
+
+// adding recipe for skulk
+var stone = <item:minecraft:stone> as IIngredient;
+var kelp = <item:minecraft:kelp> as IIngredient;
+var heardOfTheSea = <item:minecraft:heart_of_the_sea> as IIngredient;
+var enderWatcher = <item:quark:ender_watcher> as IIngredient;
+var sculk = <item:minecraft:sculk_sensor> as IIngredient;
+
+createMechanicalCraftingRecipe("skulk", sculk, [[kelp, kelp, kelp], [heardOfTheSea, enderWatcher, heardOfTheSea], [stone, stone, stone]]);
