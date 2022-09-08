@@ -1,60 +1,28 @@
 
 [Java]
 
-	[Java.Advanced]
-
-		[Java.Advanced.ExplicitGC]
-			# 
-			# Enable this to allow itlt to explicitly request a garbage collection whenever the user
-			# pauses the game or opens an screen with an opaque background while keeping auto GC.
-			# (e.g. the Resource Packs screen)
-			# 
-			# Doing this can help reduce memory usage in certain situations and also slightly
-			# reduces the chances of a large GC happening in the middle of early gameplay.
-			# 
-			# Note: For best performance with this option, include -XX:+AlwaysPreTouch in your
-			# JVM args and have Xms and Xmx be the same value. Omit/don't include the AlwaysPreTouch
-			# arg for lower physical memory usage (thus allowing other apps to use memory the game isn't
-			# currently using, at the cost of memory allocation slowdowns when the game needs it).
-			# 
-			# Warning: This option has no effect if the -XX:+DisableExplicitGC JVM arg is present.
-			# 
-			# Turn this on to help prevent and/or reduce GC-related lag spikes, turn it off for
-			# Vanilla behaviour (only rely on the pressure-based automatic GC). This is off by
-			# default as it may actually hurt performance if Xms and Xmx aren't the same!
-			enableExplicitGC = false
-			# 
-			# A list of triggers of when to run explicit GC.
-			# 
-			# Pause: When the player pauses the game.
-			# Sleep: When the player is sleeping in a bed.
-			# Menu: When navigating one of the following opaque background screens: 
-			#     Singleplayer world selection, Multiplayer server selection,
-			#     Resource Pack selection, Language selection, Chat options, Controls options,
-			#     Accessibility options, Realms main screen and Stats menu.
-			# 
-			# Note: It's mainly useful to remove "Pause" from this list if you usually only
-			# have the game paused for a tiny amount of time (i.e. less than ~2s).
-			# 
-			# Note: It's mainly useful to remove "Menu" from this list for speedruns that
-			# start the timer when the main menu is shown.
-			# 
-			# Note: enableExplicitGC must be true for this to have any effect.
-			doExplicitGCWhen = ["Pause", "Sleep", "Menu"]
-
 	[Java.Version]
 
 		[Java.Version.Min]
 
+			[Java.Version.Min.Guide]
+				# 
+				# The URL of the guide you want users to visit when they want to upgrade Java.
+				# 
+				# Note: enableCustomJavaUpgradeGuide must be enabled for this to take effect.
+				# Note: The URL must start with "https://" for security reasons.
+				# Note: itlt supports the following *optional* string insertions, useful for being
+				# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
+				customJavaUpgradeGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
+				# 
+				# Enable this if you want to be able to change the link your users are sent to when
+				# they ask for instructions on how to upgrade Java.
+				# 
+				# This is mainly useful for when you're using an unsupported version of this mod
+				# and the default guide is outdated or you're using your own custom launcher.
+				enableCustomJavaUpgradeGuide = false
+
 			[Java.Version.Min.Requirement]
-				# 
-				# The minimum version of Java needed to be able to launch the modpack.
-				# 
-				# Note: itlt handles Java version naming scheme differences for you, meaning you can
-				# put "7" here and itlt will correctly check against "Java 1.7" internally,
-				# while values such as "15" will check against "Java 15" internally.
-				#Range: 6 ~ 127
-				requiredMinJavaVersion = 17
 				# 
 				# Whether or not to require a certain version of Java to be able to launch the modpack.
 				# 
@@ -65,6 +33,14 @@
 				# Note: This is *separate* from enableMinJavaVerWarning - you can have a separate
 				# version requirement and warning.
 				enableMinJavaVerRequirement = true
+				# 
+				# The minimum version of Java needed to be able to launch the modpack.
+				# 
+				# Note: itlt handles Java version naming scheme differences for you, meaning you can
+				# put "7" here and itlt will correctly check against "Java 1.7" internally,
+				# while values such as "15" will check against "Java 15" internally.
+				#Range: 6 ~ 127
+				requiredMinJavaVersion = 17
 
 			[Java.Version.Min.Warning]
 				# 
@@ -90,48 +66,7 @@
 				# are unable to change the version of Java used to launch the game.
 				ignoreMinJavaVerWarningWhenVerForced = true
 
-			[Java.Version.Min.Guide]
-				# 
-				# The URL of the guide you want users to visit when they want to upgrade Java.
-				# 
-				# Note: enableCustomJavaUpgradeGuide must be enabled for this to take effect.
-				# Note: The URL must start with "https://" for security reasons.
-				# Note: itlt supports the following *optional* string insertions, useful for being
-				# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
-				customJavaUpgradeGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
-				# 
-				# Enable this if you want to be able to change the link your users are sent to when
-				# they ask for instructions on how to upgrade Java.
-				# 
-				# This is mainly useful for when you're using an unsupported version of this mod
-				# and the default guide is outdated or you're using your own custom launcher.
-				enableCustomJavaUpgradeGuide = false
-
 		[Java.Version.Max]
-
-			[Java.Version.Max.Requirement]
-				# 
-				# The maximum version of Java needed to be able to launch the modpack.
-				# 
-				# Note: itlt handles Java version naming scheme differences for you, meaning you can
-				# put "7" here and itlt will correctly check against "Java 1.7" internally,
-				# while values such as "15" will check against "Java 15" internally.
-				#Range: 6 ~ 127
-				requiredMaxJavaVersion = 19
-				# 
-				# Whether or not to require a certain version of Java to be able to launch the modpack.
-				# 
-				# If someone tries to launch the modpack with a version of Java newer than what's
-				# specified in requiredMaxJavaVersion, they'll get a message telling them how to
-				# downgrade and that the modpack will close until they relaunch it with older Java.
-				# 
-				# Note: If your version of Forge doesn't support the max version of Java you're
-				# trying to prevent, this mod won't be able to kick into action and show the message
-				# to users.
-				# 
-				# Note: This is *separate* from enableMaxJavaVerWarning - you can have a separate 
-				# version requirement and warning.
-				enableMaxJavaVerRequirement = false
 
 			[Java.Version.Max.Warning]
 				# 
@@ -159,6 +94,14 @@
 
 			[Java.Version.Max.Guide]
 				# 
+				# The URL of the guide you want users to visit when they want 64bit Java.
+				# 
+				# Note: enableCustomJavaDowngradeGuide must be enabled for this to take effect.
+				# Note: The URL must start with "https://" for security reasons.
+				# Note: itlt supports the following *optional* string insertions, useful for being
+				# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
+				customJavaDowngradeGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
+				# 
 				# Enable this if you want to be able to change the link your users are sent to when
 				# they ask for instructions on how to downgrade Java.
 				# 
@@ -170,14 +113,30 @@
 				# This is mainly useful for when you're using an unsupported version of this mod
 				# and the default guide is outdated or you're using your own custom launcher.
 				enableCustomJavaDowngradeGuide = false
+
+			[Java.Version.Max.Requirement]
 				# 
-				# The URL of the guide you want users to visit when they want 64bit Java.
+				# Whether or not to require a certain version of Java to be able to launch the modpack.
 				# 
-				# Note: enableCustomJavaDowngradeGuide must be enabled for this to take effect.
-				# Note: The URL must start with "https://" for security reasons.
-				# Note: itlt supports the following *optional* string insertions, useful for being
-				# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
-				customJavaDowngradeGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
+				# If someone tries to launch the modpack with a version of Java newer than what's
+				# specified in requiredMaxJavaVersion, they'll get a message telling them how to
+				# downgrade and that the modpack will close until they relaunch it with older Java.
+				# 
+				# Note: If your version of Forge doesn't support the max version of Java you're
+				# trying to prevent, this mod won't be able to kick into action and show the message
+				# to users.
+				# 
+				# Note: This is *separate* from enableMaxJavaVerWarning - you can have a separate 
+				# version requirement and warning.
+				enableMaxJavaVerRequirement = false
+				# 
+				# The maximum version of Java needed to be able to launch the modpack.
+				# 
+				# Note: itlt handles Java version naming scheme differences for you, meaning you can
+				# put "7" here and itlt will correctly check against "Java 1.7" internally,
+				# while values such as "15" will check against "Java 15" internally.
+				#Range: 6 ~ 127
+				requiredMaxJavaVersion = 19
 
 	[Java.Memory]
 
@@ -322,11 +281,52 @@
 			# the default guide's outdated or you're using your own custom launcher.
 			enableCustom64bitJavaGuide = false
 
+	[Java.Advanced]
+
+		[Java.Advanced.ExplicitGC]
+			# 
+			# Enable this to allow itlt to explicitly request a garbage collection whenever the user
+			# pauses the game or opens an screen with an opaque background while keeping auto GC.
+			# (e.g. the Resource Packs screen)
+			# 
+			# Doing this can help reduce memory usage in certain situations and also slightly
+			# reduces the chances of a large GC happening in the middle of early gameplay.
+			# 
+			# Note: For best performance with this option, include -XX:+AlwaysPreTouch in your
+			# JVM args and have Xms and Xmx be the same value. Omit/don't include the AlwaysPreTouch
+			# arg for lower physical memory usage (thus allowing other apps to use memory the game isn't
+			# currently using, at the cost of memory allocation slowdowns when the game needs it).
+			# 
+			# Warning: This option has no effect if the -XX:+DisableExplicitGC JVM arg is present.
+			# 
+			# Turn this on to help prevent and/or reduce GC-related lag spikes, turn it off for
+			# Vanilla behaviour (only rely on the pressure-based automatic GC). This is off by
+			# default as it may actually hurt performance if Xms and Xmx aren't the same!
+			enableExplicitGC = false
+			# 
+			# A list of triggers of when to run explicit GC.
+			# 
+			# Pause: When the player pauses the game.
+			# Sleep: When the player is sleeping in a bed.
+			# Menu: When navigating one of the following opaque background screens: 
+			#     Singleplayer world selection, Multiplayer server selection,
+			#     Resource Pack selection, Language selection, Chat options, Controls options,
+			#     Accessibility options, Realms main screen and Stats menu.
+			# 
+			# Note: It's mainly useful to remove "Pause" from this list if you usually only
+			# have the game paused for a tiny amount of time (i.e. less than ~2s).
+			# 
+			# Note: It's mainly useful to remove "Menu" from this list for speedruns that
+			# start the timer when the main menu is shown.
+			# 
+			# Note: enableExplicitGC must be true for this to have any effect.
+			doExplicitGCWhen = ["Pause", "Sleep", "Menu"]
+
 [Internal]
 	# 
 	# The version of itlt that created this config file. Intended to be used for migrating
 	# config changes when you update the mod. Please don't touch this, this is for itlt itself to change.
-	configVersion = "2.1.4"
+	configVersion = "2.1.5"
 
 [ServerList]
 	# 
