@@ -52,3 +52,28 @@ var enderWatcher = <item:quark:ender_watcher> as IIngredient;
 var sculk = <item:minecraft:sculk_sensor> as IIngredient;
 
 createMechanicalCraftingRecipe("skulk", sculk, [[kelp, kelp, kelp], [heardOfTheSea, enderWatcher, heardOfTheSea], [stone, stone, stone]]);
+
+// change recipe chain armor
+var chainHelmet = <item:minecraft:chainmail_helmet> as IIngredient;
+var chainPlate = <item:minecraft:chainmail_chestplate> as IIngredient;
+var chainLeggins = <item:minecraft:chainmail_leggings> as IIngredient;
+var chainBoots = <item:minecraft:chainmail_boots> as IIngredient;
+
+var chain = <item:minecraft:chain> as IIngredient;
+var ironNugget = <item:minecraft:iron_nugget> as IIngredient;
+
+var itemsToRemove = [
+    chainHelmet,
+    chainPlate,
+    chainLeggins,
+    chainBoots
+] as IIngredient[];
+
+for items in itemsToRemove{
+    deleteCraftingRecipeByOutput(items);
+}
+
+createCraftingRecipeShaped("chain_helmet", chainHelmet, [[air, air, air], [chain, ironIngot, chain], [chain, air, chain]]);
+createCraftingRecipeShaped("chain_plate", chainPlate, [[chain, air, chain], [chain, ironIngot, chain], [chain, ironIngot, chain]]);
+createCraftingRecipeShaped("chain_leggins", chainLeggins, [[chain, ironIngot, chain], [chain, air, chain], [chain, air, chain]]);
+createCraftingRecipeShaped("chain_boots", chainBoots, [[air, air, air], [chain, air, chain], [ironIngot, air, ironIngot]]);
