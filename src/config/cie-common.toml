@@ -7,7 +7,7 @@
 	#Should item entities have physical aspects such as collision boxes?
 	#Default = true
 	#Vanilla = false
-	"Item Physics" = true
+	"Item Physics" = false
 	#Should item entities be picked up automatically?
 	#Default = false
 	#Vanilla = true
